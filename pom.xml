@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+<<<<<<< HEAD
+
+=======
+>>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
+    <groupId>com.happymall</groupId>
+    <artifactId>happymall</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>happymall</name>
+<<<<<<< HEAD
+    <description>Aggregation service</description>
+=======
+    <description>聚合服务</description>
+
+>>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>happymall-coupon</module>
+        <module>happymall-member</module>
+        <module>happymall-order</module>
+        <module>happymall-product</module>
+        <module>happymall-ware</module>
+<<<<<<< HEAD
+        <module>renren-fast</module>
+        <module>renren-generator</module>
+        <module>happymall-common</module>
+=======
+>>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
+    </modules>
+
+
+</project>

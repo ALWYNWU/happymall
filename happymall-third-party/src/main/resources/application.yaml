@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    alicloud:
+      access-key: LTAI5tNKpwSWVzKh7cm7BKSx
+      secret-key: aYtcNvqrN8Zc0mxUD2afPKtrvC59UF
+      oss:
+        endpoint: oss-us-west-1.aliyuncs.com
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  application:
+    name: happymall-third-party
+
+server:
+  port: 30000
+

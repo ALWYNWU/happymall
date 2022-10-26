@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script type="text/javascript" src="/static/cart/js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="/static/cart/bootstrap/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/static/cart/js/swiper.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/cart/css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/cart/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/cart/css/success.css"/>
+
+</head>
+
+<body>
+<!--头部-->
+<div class="alert-info">
+    <div class="hd_wrap_top">
+        <ul class="hd_wrap_left">
+            <li class="hd_home"><i class="glyphicon glyphicon-home"></i>
+                <a href="http://happymall.com">Happymall</a>
+            </li>
+
+        </ul>
+
+        <ul class="hd_wrap_right">
+            <li>
+                <a style="font-family: sans-serif" th:if="${session.loginUser!=null}"><b>[[${session.loginUser==null?'
+                    ':session.loginUser.nickname}]]</b></a>
+                <a href="http://auth.happymall.com/login.html" th:if="${session.loginUser==null}"
+                   style="font-family: sans-serif"><b>Sign in</b></a>
+            </li>
+            <li>
+                <a th:if="${session.loginUser==null}" href="http://auth.happymall.com/register.html"
+                   style="font-family: sans-serif">Register</a>
+            </li>
+            <li class="spacer"></li>
+
+            <li>
+                <a href="/javascript:;">我的订单</a>
+            </li>
+
+
+        </ul>
+
+    </div>
+</div>
+
+<div class="nav-tabs-justified">
+    <div class="nav_wrap">
+
+        <div class="nav_top">
+            <div class="nav_top_one">
+                <a href="http://happymall.com"><img style="width: 169px; height: 52px"
+                                                    src="/static/login/JD_img/newlogo.jpg"/></a>
+            </div>
+            <div class="nav_top_two"><input type="text"/>
+                <button style="font-family: sans-serif">Search</button>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+
+<div class="main">
+
+    <div class="success-wrap">
+        <div class="w" id="result">
+            <div class="m succeed-box">
+                <div th:if="${item!=null}" class="mc success-cont">
+                    <div class="success-lcol">
+                        <div class="success-top"><b class="succ-icon"></b>
+                            <h3 class="ftx-02" style="font-family: sans-serif"><b>Added to Cart</b></h3></div>
+                        <div class="p-item">
+                            <div class="p-img">
+                                <a href="/javascript:;" target="_blank"><img style="height: 60px;width:60px;"
+                                                                             th:src="${item.image}"></a>
+                            </div>
+                            <div class="p-info">
+                                <div class="p-name">
+                                    <a th:href="'http://item.happymall.com/'+${item.skuId}+'.html'"
+                                       th:text="${item.title}"></a>
+                                </div>
+                                <div class="p-extra"><span class="txt" th:text="'Num：'+${item.count}"></span></div>
+                            </div>
+                            <div class="clr"></div>
+                        </div>
+                    </div>
+                    <div class="success-btns success-btns-new">
+                        <div class="success-ad">
+                            <a href="/#none"></a>
+                        </div>
+                        <div class="clr"></div>
+                        <div class="bg_shop">
+                            <a class="btn-tobback" th:href="'http://item.happymall.com/'+${item.skuId}+'.html'">Product
+                                details</a>
+                            <a class="btn-addtocart" href="http://cart.happymall.com/cart.html"
+                               id="GotoShoppingCart"><b></b>Checkout</a>
+                        </div>
+                    </div>
+                </div>
+                <div th:if="${item==null}" class="mc success-cont">
+                    <h2>Something wrong</h2> <a href="http://happymall.com">Go to happymall</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+<script type="text/javascript" src="/static/cart/js/success.js"></script>
+
+</html>

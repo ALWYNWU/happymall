@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8"/>
+    <script src="/static/order/confirm/js/jquery-3.1.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/static/order/confirm/css/JD2.css"/>
+
+    <title></title>
+</head>
+
+<body style="font-family: sans-serif">
+
+<header>
+    <div class="header">
+        <ul class="header-left">
+            <li>
+                <img src="/static/order/confirm/img/header_1.png"/>
+                <a href="http://happymall.com">Happymall</a>
+            </li>
+
+
+        </ul>
+        <ul class="header-right">
+            <li style="width: 250px">
+                <a style="font-family: sans-serif" th:if="${session.loginUser!=null}"><b>[[${session.loginUser==null?'
+                    ':session.loginUser.nickname}]]</b></a>
+                <a href="http://auth.happymall.com/login.html" th:if="${session.loginUser==null}"
+                   style="font-family: sans-serif"><b>Sign in</b></a>
+            </li>
+            <li th:if="${session.loginUser==null}">
+                <a href="http://auth.happymall.com/register.html" style="font-family: sans-serif">Register</a>
+            </li>
+
+            <li><a href="">Order</a></li>
+
+        </ul>
+        <div style="clear: both;"></div>
+    </div>
+
+
+</header>
+
+
+<!--logo图片-->
+<div class="top-1">
+    <img style="width: 169px; height: 52px" src="/static/login/JD_img/newlogo.jpg" class="img1"><span>Review Order</span>
+</div>
+
+
+<p class="p1"><b>Order information <span style="color: red" th:if="${msg!=null}" th:text="${msg}"></span> </b></p>
+<div class="section">
+    <!--收货人信息-->
+    <div class="top-2">
+        <span>Address</span>
+        <span>Add address</span>
+    </div>
+
+    <!--Address-->
+    <div class="top-3 addr-item" th:each="addr:${orderConfirmData.address}">
+        <p th:attr="def=${addr.defaultStatus},addrId=${addr.id}"><a href="#" style="font-size: small">[[${addr.name}]]</a></p>
+        <span> [[${addr.city}]]  [[${addr.detailAddress}]] [[${addr.province}]] [[${addr.phone}]]</span>
+    </div>
+
+    <div class="hh1"/>
+</div>
+
+
+<!--支付方式-->
+<h4 class="h4">Payment</h4>
+
+<div class="top-6">
+    <p>AliPay</p>
+</div>
+<div class="hh1"></div>
+<!--送货清单-->
+<h4 class="h4" style="margin-top: 5px;">Shipping</h4>
+<div class="top_1">
+    <div class="to_left">
+        <h5><span class="peisong">Ship by</span><span class="dui"><img
+                src="/static/order/confirm/img/i_03.png"/> Items</span></h5>
+        <div class="box">
+            Happymall Prime
+        </div>
+
+    </div>
+    <div class="to_right">
+        <h5>Sold by：happymall</h5>
+        <!--图片-->
+        <div class="yun1" th:each="item:${orderConfirmData.items}">
+            <img th:src="${item.image}" class="yun"/>
+            <div class="mi">
+                <p>[[${item.title}]]<span style="color: red;" th:text="'$' + ${#numbers.formatDecimal(item.price,1,2)}"></span>
+                    <span> x[[${item.count}]] </span> <span>[[${orderConfirmData.stocks[item.skuId]?"In Stock":"Out of Stock"}]]</span>
+
+                </p>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="bto">
+
+    <h4 class="clear">Gift card balance</h4>
+    <ul>
+        <li>Gift card</li>
+    </ul>
+
+</div>
+
+<div class="xia">
+    <div class="qian">
+        <p class="qian_y">
+            <span>[[${orderConfirmData.count}]]</span>
+            <span>Item(s) Subtotal：</span>
+            <span class="rmb">$[[${#numbers.formatDecimal(orderConfirmData.total,1,2)}]]</span>
+        </p>
+        <p class="qian_y">
+            <span style="margin-right: 15px">Saving：</span>
+            <span class="rmb">  -$0.00</span>
+        </p>
+        <p class="qian_y">
+            <span style="margin-right: 22px">Shipping：</span>
+            <span class="rmb">$<span id="fare"></span></span>
+        </p>
+
+
+    </div>
+
+    <div class="yfze">
+        <p class="yfze_a"><span class="z"><b>Grand Total：</b></span><span class="hq">$<b id="payPrice">[[${#numbers.formatDecimal(orderConfirmData.payPrice,1,2)}]]</b></span></p>
+        <p class="yfze_b"><b>Ship to: </b><span id="receiveAddress"></span> </p>
+    </div>
+    <form action="http://order.happymall.com/submitOrder" method="post">
+        <input id="addrIdInput" type="hidden" name="addrId" value="">
+        <input id="payPriceInput" type="hidden" name="payPrice">
+        <input type="hidden" name="orderToken" th:value="${orderConfirmData.orderToken}">
+        <button class="tijiao" type="submit"><b>Place Order</b></button>
+    </form>
+
+</div>
+</div>
+
+<div class="headera">
+
+</div>
+<script>
+    $(document).ready(function () {
+        $('.header-right li:nth-of-type(6)').hover(function () {
+            $('.header-r-11').css('display', 'block')
+        }, function () {
+            $('.header-r-11').css('display', 'none')
+        })
+        $('.header-right li:nth-of-type(12)').hover(function () {
+            $('.header-r-2').css('display', 'block')
+        }, function () {
+            $('.header-r-2').css('display', 'none')
+        })
+        $('.header-right li:nth-of-type(14)').hover(function () {
+            $('.header-r-3').css('display', 'block')
+        }, function () {
+            $('.header-r-3').css('display', 'none')
+        })
+        $('.header-l-2').hover(function () {
+            $('.header-l-d').css('display', 'block')
+        }, function () {
+            $('.header-l-d').css('display', 'none')
+        })
+        $('.header-r-4').hover(function () {
+            $('.h-r-1').css('display', 'block')
+        }, function () {
+            $('.h-r-1').css('display', 'none')
+        })
+        highlightAddress();
+        getFare($(".addr-item p[def='1']").attr("addrId"));
+    })
+
+    function highlightAddress() {
+        $(".addr-item p").css({"border": "2px solid gray"});
+        $(".addr-item p[def='1']").css({"border": "2px solid red"});
+    }
+
+    $(".addr-item p").click(function () {
+        $(".addr-item p").attr("def", "0");
+        $(this).attr("def", "1");
+        highlightAddress();
+
+        //获取到当前地址id
+        var addrId = $(this).attr("addrId");
+
+        //发送ajax请求获取运费信息
+        getFare(addrId);
+    });
+
+    function getFare(addrId) {
+        //给表单回填选择的地址
+        $("#addrIdInput").val(addrId);
+        $.get("http://happymall.com/api/ware/wareinfo/fare?addrId=" + addrId, function (resp) {
+            console.log(resp);
+            $("#fare").text(resp.data.fare);
+            let total = [[${orderConfirmData.total}]];
+
+            let payPrice = total * 1 + resp.data.fare * 1;
+            $("#payPrice").text(payPrice);
+            $("#payPriceInput").val(payPrice);
+
+            $("#receiveAddress").text(resp.data.address.name + " " + resp.data.address.detailAddress + " " + resp.data.address.city + " " + resp.data.address.province)
+
+        })
+    }
+
+
+</script>
+</body>
+
+</html>
