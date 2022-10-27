@@ -1,9 +1,4 @@
 package com.happymall.ware;
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> newBranch
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
@@ -18,15 +13,6 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @MapperScan("com.happymall.ware.dao")
 @SpringBootApplication
 @EnableDiscoveryClient
-<<<<<<< HEAD
-=======
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-@SpringBootApplication
->>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
-=======
->>>>>>> newBranch
 public class HappymallWareApplication {
 
     public static void main(String[] args) {
