@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+    <link rel="stylesheet" href="/static/order/pay/css/style.css">
+    <script src="/static/order/pay/js/jquery-3.1.1.min.js" charset="utf-8"></script>
+	</head>
+	<body style="font-family: sans-serif">
+    <div class="One_Jdbox">
+      <div class="Jdbox_head">
+        <img style="width: 169px; height: 52px" src="/static/login/JD_img/newlogo.jpg" class="img1"><span class="bank">Payment</span>
+        <ul>
+          <li style="width: 100px">
+            <a  style="font-family: sans-serif" th:if="${session.loginUser!=null}"><b>[[${session.loginUser==null?' ':session.loginUser.nickname}]]</b></a>
+            <a href="http://auth.happymall.com/login.html" th:if="${session.loginUser==null}" style="font-family: sans-serif"><b>Sign in</b></a>
+          </li>
+          <li th:if="${session.loginUser==null}">
+            <a  href="http://auth.happymall.com/register.html" style="font-family: sans-serif">Register</a>
+          </li>
+          <li><a href="http://member.happymall.com/memberOrder">Order</a></li>
+        </ul>
+      </div>
+      <div class="Jdbox_BuySuc">
+        <dl>
+          <dd>
+            <span>Order: [[${submitOrderResp.order.orderSn}]]</span>
+            <span>Amount: [[${#numbers.formatDecimal(submitOrderResp.order.payAmount,1,2)}]]</span>
+          </dd>
+
+        </dl>
+      </div>
+      <div class="Jd_footer">
+        <ul>
+		  <li>
+            <img src="/static/order/pay/img/zhifubao.png" style="weight:auto;height:30px;" alt="">
+            <a th:href="'http://order.happymall.com/payOrder?orderSn='+${submitOrderResp.order.orderSn}">Alipay</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+	</body>
+  <script type="text/javascript">
+    //头部订单成功 订单详细鼠标移入效果
+    $(".Jdbox_BuySuc dl dd:last-child span:last-child").mouseover(function(){
+      $(this).css({"cursor":"pointer","color":"#E31613"})
+    }).mouseout(function(){
+      $(this).css("color","#7EA4FF")
+    })
+    //分期付款鼠标移入hover效果
+    $(".Jd_Fenqi>ol li:not(:first-child)").mouseover(function(){
+      $(this).css({"cursor":"pointer","border":"1px solid #E31613"})
+    }).mouseout(function(){
+      $(this).css("border","1px solid #C9DFFF")
+    })
+    //支付方式按钮选择hover效果
+    $(".Jd_main ul li:nth-child(3) button").mouseover(function(){
+      $(this).css({"cursor":"pointer","color":"#E31613"})
+    }).mouseout(function(){
+      $(this).css("color","#67A4FF")
+    })
+    //忘记密码鼠标移入效果
+    $(".Jd_main ul li:nth-child(4) span").mouseover(function(){
+      $(this).css({"cursor":"pointer","color":"#E31613"})
+    }).mouseout(function(){
+      $(this).css("color","#67A4FF")
+    })
+    //立即支付按钮效果
+    $(".Jd_main ul li:nth-child(5) button").mouseover(function(){
+      $(this).css({"cursor":"pointer","background":"#FF5350"})
+    }).mouseout(function(){
+      $(this).css("background","#FC6E6C")
+    })
+
+    $(".Jd_footer ul li").mouseover(function(){
+      $(this).css({"cursor":"pointer","color":"#E31613"})
+    }).mouseout(function(){
+      $(this).css("color","#5E5E5E")
+    })
+
+    $(".Jdbox_head>ul li span").mouseover(function(){
+      $(this).css({"cursor":"pointer","color":"#E31613"})
+    }).mouseout(function(){
+      $(this).css("color","#666666")
+    })
+    $(".Jdbox_head>ul li:not(:first-child)").mouseover(function(){
+      $(this).css({"cursor":"pointer","color":"#E31613"})
+    }).mouseout(function(){
+      $(this).css("color","#666666")
+    })
+
+
+    $(".Jd_Fenqi ul li:first-child").mouseover(function(){
+      $(this).css({"cursor":"pointer","color":"#666666"})
+    }).mouseout(function(){
+      $(this).css({"color":"black"})
+    })
+  </script>
+</html>

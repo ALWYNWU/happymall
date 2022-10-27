@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/static/item/scss/shop.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/item/scss/jd.css"/>
+    <link rel="stylesheet" href="/static/item/scss/header.css"/>
+    <link rel="stylesheet" type="text/css" href="/static/item/bootstrap/css/bootstrap.css"/>
+</head>
+<body>
+<div id="max">
+    <header>
+        <!--品牌官方网站-->
+        <div class="min">
+            <ul class="header_ul_right">
+                <li style="border: 0;">
+                    <a style="font-family: sans-serif" th:if="${session.loginUser!=null}"><b>[[${session.loginUser==null?'
+                        ':session.loginUser.nickname}]]</b></a>
+                    <a href="http://auth.happymall.com/login.html" th:if="${session.loginUser==null}"
+                       style="font-family: sans-serif"><b>Sign in</b></a>
+                </li>
+                <li>
+                    <a th:if="${session.loginUser==null}" href="http://auth.happymall.com/register.html"
+                       style="font-family: sans-serif">Register</a>
+                </li>
+                <li><a href="/static/item/javascript:;" class="aa">Order</a></li>
+
+
+            </ul>
+        </div>
+    </header>
+    <nav>
+        <div class="nav_min">
+            <div class="nav_top">
+                <div class="nav_top_one"><a href="http://happymall.com"><img style="width: 169px; height: 52px"
+                                                                             src="/static/login/JD_img/newlogo.jpg"/></a>
+                </div>
+                <div class="nav_top_two"><input type="text"/>
+                    <button>Search</button>
+                </div>
+                <div class="nav_top_three"><a href="/static/item/../JD_Shop/One_JDshop.html">Cart</a><span
+                        class="glyphicon glyphicon-shopping-cart"></span>
+
+                </div>
+            </div>
+            <div class="nav_down">
+                <ul class="nav_down_ul">
+                    <li class="nav_down_ul_1" style="width: 24%;float: left;"><a
+                            href="http://happymall.com">All Categories</a>
+
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+<div class="crumb-wrap">
+</div>
+<div class="Shop">
+    <div class="box">
+        <div class="box-one ">
+            <div class="boxx">
+
+                <div class="imgbox">
+                    <div class="probox">
+                        <img class="img1" alt="" th:src="${item.info.skuDefaultImg}">
+                        <div class="hoverbox"></div>
+                    </div>
+                    <div class="showbox">
+                        <img class="img1" alt="" th:src="${item.info.skuDefaultImg}">
+                    </div>
+                </div>
+
+                <div class="box-lh">
+
+                    <div class="box-lh-one">
+                        <ul>
+                            <li th:each="img:${item.images}" th:if="${!#strings.isEmpty(img.imgUrl)}"><img
+                                    th:src="${img.imgUrl}"/></li>
+                        </ul>
+                    </div>
+                    <div id="left">
+                        <
+                    </div>
+                    <div id="right">
+                        >
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="box-two">
+                <div class="box-name" th:text="${item.info.skuTitle}">
+
+                </div>
+                <div class="box-hide" th:text="${item.info.skuSubtitle}">
+
+                </div>
+
+                <div class="box-summary clear">
+                    <ul>
+                        <li><b style="font-family: sans-serif">Price</b></li>
+                        <li>
+                            <span>$</span>
+                            <span th:text="${#numbers.formatDecimal(item.info.price,1,2)}"></span>
+                        </li>
+
+                        <li>
+                        </li>
+                    </ul>
+                </div>
+
+
+                <div class="box-stock">
+                    <ul class="box-ul">
+                        <li><span style="font-family: sans-serif">Deliver to</span></li>
+                        <li class="box-stock-li">
+                            <div class="box-stock-one">
+                                Edmonton
+                                <img src="/static/item/img/4a79b87a68623d4e8a73aff3e25fa99b.png" alt="" class="img"/>
+                            </div>
+                            <div class="box-stock-two">
+                                <dl>
+                                    <dd>
+                                        <div class="box-stock-dd">
+                                            <div class="box-stock-fot">
+                                                <div class="box-stock-con" style="display: block;">
+                                                    <ul>
+                                                        <li>AB</li>
+                                                        <li>BC</li>
+                                                        <li>ON</li>
+                                                        <li>SK</li>
+                                                    </ul>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                    </dd>
+                                </dl>
+
+                            </div>
+
+                        </li>
+                        <li>
+                            <span th:text="${item.hasStock?'In stock':'Out of stock'}"
+                                  style="font-family: sans-serif"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-supply">
+                    <ul class="box-ul">
+                        <li></li>
+                        <li>
+                            <b>Free</b> shipping by happymall
+                        </li>
+                    </ul>
+                </div>
+                <div class="box-attr-3">
+                    <div class="box-attr clear" th:each="attr:${item.saleAttrs}">
+                        <dl>
+                            <dt style="font-family: sans-serif">[[${attr.attrName}]]</dt>
+                            <dd th:each="val : ${attr.attrValues}">
+                                <a th:attr=" class=${#lists.contains(#strings.listSplit(val.skuIds,','),item.info.skuId.toString())
+                                   ? 'sku_attr_value checked': 'sku_attr_value'}, skus=${val.skuIds} "
+                                   href="">
+                                    [[${val.attrValue}]]
+                                </a>
+                            </dd>
+
+                        </dl>
+                    </div>
+
+                </div>
+
+                <div class="box-btns clear">
+                    <div class="box-btns-one">
+                        <input type="text" name="" id="numInput" value="1"/>
+                        <div class="box-btns-one1">
+
+                            <div>
+                                <button id="jia">
+                                    +
+                                </button>
+                            </div>
+                            <div>
+                                <button id="jian">
+                                    -
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="box-btns-two" th:if="${item.hasStock}">
+                        <a href="#" id="addToCart" style="font-family: sans-serif" th:attr="skuId=${item.info.skuId}">
+                            <b>Add to cart</b>
+                        </a>
+                    </div>
+                    <div class="box-btns-two" th:if="${item.hasStock==false}">
+                        <b style="font-family: sans-serif">Out of Stock</b>
+                    </div>
+                </div>
+
+                <div class="box-footer-zo">
+                    <div class="box-footer clear">
+
+                    </div>
+
+                    <div class="box-footer">
+                        <dl>
+
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div class="ShopXiangqing">
+        <!--商品介绍-->
+        <div class="allquanbushop">
+            <ul class="shopjieshao">
+                <li class="jieshoa" style="background: #e4393c;">
+                    <a href="#" style="color: white;"><b>Introduction</b></a>
+                </li>
+                <li class="baozhuang">
+                    <a href="#"><b>Specification</b></a>
+                </li>
+
+                <li class="pingjia">
+                    <a href="#"><b>Review</b></a>
+                </li>
+
+            </ul>
+
+            <ul class="shopjieshaos posi" style="display: none;">
+                <li class="jieshoa" style="background: #e4393c;">
+                    <a href="#" style="color: white;">Introduction</a>
+                </li>
+                <li class="baozhuang">
+                    <a href="#">Specification</a>
+                </li>
+
+                <li class="pingjia">
+                    <a href="#">Reviews</a>
+                </li>
+
+            </ul>
+
+            <!--商品详情-->
+            <div class="huawei">
+                <ul class="xuanxiangka">
+                    <li class="jieshoa actives" id="li1">
+                        <div class="shanpinsssss">
+                            <!--									<p>
+                                                                    <a href="/static/item/#">品牌:华为（HUAWEI）</a>
+                                                                </p>
+                                                                <table>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a href="/static/item/##">商品名称：华为Mate 10</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="/static/item/##">商品毛重：0.58kg</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="/static/item/##">商品编号：5544038</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="/static/item/##">商品产地：中国大陆</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td>
+                                                                            <a href="/static/item/##">系统：安卓（Android）</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="/static/item/##">前置摄像头像素：800万-1599万</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="/static/item/##">后置摄像头像素：2000万及以上，1200万-1999万</a>
+                                                                        </td>
+                                                                        <td>
+                                                                            <a href="/static/item/##">机身内存：128GB</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td colspan="4">
+                                                                            <a href="/static/item/##">全面屏，双卡双待，指纹识别，Type-C，VoLTE，2K屏，拍照神器，支持NFC，商务手机，安全手机，分辨率10</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>-->
+                            <img style="width: 1010px" class="xiaoguo" th:src="${desc}"
+                                 th:each="desc:${#strings.listSplit(item.description.decript,',')}"/>
+
+                        </div>
+                    </li>
+                    <li class="baozhuang actives" id="li2">
+                        <div class="guiGebox">
+                            <div class="guiGe" th:each="group:${item.groupAttrs}">
+                                <h3 th:text="${group.groupName}"></h3>
+                                <dl>
+                                    <div th:each="attrs:${group.attrValues}">
+                                        <dt th:text="${attrs.attrName}" style="width: 265px"></dt>
+                                        <dd th:text="${attrs.attrValue}"></dd>
+                                    </div>
+                                </dl>
+                            </div>
+
+                        </div>
+                    </li>
+                    <!--包装-->
+                    <li class="baozhang actives" id="li3">
+                        <div class="oBox">
+
+                        </div>
+                    </li>
+                    <!--评价-->
+                    <li class="PINgjia actives" id="li4">
+                        <div class="h3">
+                            <h3>商品评价</h3>
+                        </div>
+                        <div class="nav">
+                            <div class="left">
+                                <p class="haoping">好评度</p>
+                                <p><span>100%</span></p>
+                            </div>
+                            <div class="right">
+                                <ul>
+                                    <li>
+                                        <a href="/static/item/##">就是快（424）</a>
+                                    </li>
+                                    <li>
+                                        <a href="/static/item/##">物流很快（254） </a>
+                                    </li>
+                                    <li>
+                                        <a href="/static/item/##">货真价实（168）</a>
+                                    </li>
+                                    <li>
+                                        <a href="/static/item/##">有档次（158）</a>
+                                    </li>
+                                    <li>
+                                        <a href="/static/item/##">国产品牌（133）</a>
+                                    </li>
+                                    <li>
+                                        <a href="/static/item/##">外形美观（103）</a>
+                                    </li>
+                                    <li>
+                                        <a href="/static/item/##">很给力（75）</a>
+                                    </li>
+                                    <li>
+                                        <a href="/static/item/##">反应灵敏（68）</a>
+                                    </li>
+                                    <li>
+                                        <a href="/static/item/##">性价比高（60）</a>
+                                    </li>
+                                    <li>
+                                        <a href="/static/item/##">价格优惠（50）</a>
+                                    </li>
+                                    <li>
+                                        <a href="/static/item/##">功能齐全（49）</a>
+                                    </li>
+                                    <li style="background: gainsboro;">
+                                        <a href="/static/item/##">速度太慢（5）</a>
+                                </ul>
+                            </div>
+                        </div>
+                        <!--全部评价-->
+                        <div class="allpingjia">
+                            <ul>
+                                <li><a href="/static/item/##">全部评价（4.2万）</a></li>
+                                <li><a href="/static/item/##">晒图（500）</a></li>
+                                <li><a href="/static/item/##">追拼（200+）</a></li>
+                                <li><a href="/static/item/##">好评（4.1万）</a></li>
+                                <li><a href="/static/item/##">中评（100+）</a></li>
+                                <li><a href="/static/item/##">差评（100+）</a></li>
+                                <li><a href="/static/item/##"><input type="checkbox"/>只看当前商品价格</a></li>
+                                <li class="imga" style="float: right;"><a href="/static/item/##">推荐排序 <img
+                                        src="/static/item/img/animaite.png"/> </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="shuoming actives" id="li5"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="headera">
+
+    <!--About us-->
+    <div class="guanyuwomen">
+        <ul>
+            <li>
+                <a href="/static/item/##">About us</a>
+            </li>
+
+        </ul>
+    </div>
+
+</div>
+
+
+</body>
+
+<script src="/static/item/js/jquery1.9.js" type="text/javascript" charset="utf-8"></script>
+<script src="/static/item/js/js.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+</script>
+<script>
+    $(".sku_attr_value").click(function () {
+
+        let skus = new Array();
+        let curr = $(this).attr("skus").split(",");
+
+        $(this).parent().parent().find(".sku_attr_value").removeClass("checked");
+        $(this).addClass("checked");
+        changeCheckedStyle();
+
+        $("a[class='sku_attr_value checked']").each(function () {
+            skus.push($(this).attr("skus").split(","));
+        });
+
+        let filterEle = skus[0];
+        for (let i = 1; i < skus.length; i++) {
+            filterEle = $(filterEle).filter(skus[i])[0];
+        }
+
+        location.href = "http://item.happymall.com/" + filterEle + ".html";
+
+        return false;
+    });
+    $(function () {
+        changeCheckedStyle();
+    });
+
+    function changeCheckedStyle() {
+        $(".sku_attr_value").parent().css({"border": "solid 1px #ccc"});
+        $("a[class='sku_attr_value checked']").parent().css({"border": "solid 1px red"});
+    };
+
+
+    $(".addToCart").click(function () {
+        let skuId = $(this).attr("skuId");
+        let num = $("#productNum").val();
+        location.href = "http://cart.happymall.com/addCartItem?skuId=" + skuId + "&num=" + num;
+        return false;
+    });
+
+    $(".seckill").click(function () {
+        var isLogin = [[${session.loginUser != null}]];     //true
+        if (isLogin) {
+            var killId = $(this).attr("sessionid") + "-" + $(this).attr("skuid");
+            var code = $(this).attr("code");
+            var num = $("#productNum").val();
+            location.href = "http://seckill.happymall.com/kill?killId=" + killId + "&key=" + code + "&num=" + num;
+        } else {
+            alert("秒杀请先登录");
+        }
+        return false;
+    });
+
+    $("#addToCart").click(function (){
+        let val = $("#numInput").val();
+        let skuId = $(this).attr("skuId");
+        location.href = "http://cart.happymall.com/addToCart?skuId="+skuId+"&num="+val;
+        return false;
+    });
+
+</script>
+
+</html>

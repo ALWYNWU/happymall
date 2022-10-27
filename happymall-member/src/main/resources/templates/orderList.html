@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Order</title>
+  <link rel="stylesheet" href="/static/member/css/index.css">
+  <style media="screen">
+    * {
+      font-family: "sans-serif";
+    }
+  </style>
+</head>
+
+<body style="font-family: sans-serif">
+  <div id="nav" style="font-family: sans-serif">
+    <nav>
+     
+      <div class="myjd">
+        <h3 style="font-family: sans-serif">My Happymall</h3>
+        <button onclick="location.href='http://happymall.com'" style="font-family: sans-serif">Happymall</button>
+      </div>
+      <ul class="nav_ul">
+        <li style="font-family: sans-serif">Home</li>
+
+      </ul>
+
+      <div style="clear:both;"></div>
+    </nav>
+
+  </div>
+  <div style="clear:both;"></div>
+  <div id="big">
+    <div id="bigLeft">
+      <ul>
+        <h5>Order</h5>
+        <li style="color:#E4393C;font-weight:800;">My Order</li>
+
+    </div>
+    <div id="bigRight">
+      <div class="myOrder">
+        <p>My order</p>
+      </div>
+
+
+      <div class="allBig">
+        <div class="allOrder">
+          <ul class="allOrderTop">
+            <li>
+              <ol>
+                <li style="font-family: sans-serif">All order</li>
+
+                <div style="clear:both;"></div>
+              </ol>
+            </li>
+
+            <li class="allOrderTopLastLi">
+            </li>
+            <div class="clear:both;"></div>
+          </ul>
+
+        </div>
+        <div class="details">
+
+        </div>
+
+        <table class="table" th:each="order:${orders.page.list}">
+          <tr>
+            <td colspan="7" style="background:#F7F7F7">
+              <span style="color:#AAAAAA; font-family: sans-serif" th:text="${order.modifyTime}"></span>
+              <span><ruby style="color:#AAAAAA; font-family: sans-serif">Order No:</ruby> [[${order.orderSn}]]</span>
+              <span style="font-family: sans-serif">Happymall<i class="table_i"></i></span>
+              <i class="table_i5 isShow"></i>
+            </td>
+          </tr>
+          <tr class="tr" th:each="item:${order.itemEntities}">
+            <td colspan="3" style="border-right: 1px solid #ccc">
+              <img style="width: 60px; height: 60px" th:src="${item.skuPic}" alt="" class="img">
+              <div>
+                <p style="width: 242px; height: auto; overflow: auto; font-family: sans-serif">
+                  [[${item.skuName}]]
+                </p>
+              </div>
+              <div style="margin-left:15px; font-family: sans-serif">x[[${item.skuQuantity}]]</div>
+              <div style="clear:both"></div>
+            </td>
+            <td th:if="${itemStat.index==0}" th:rowspan="${itemStat.size}" style="font-family: sans-serif">[[${order.receiverName}]]<i><i class="table_i1"></i></i></td>
+            <td th:if="${itemStat.index==0}" th:rowspan="${itemStat.size}" style="padding-left:10px;color:#AAAAB1; font-family: sans-serif">
+              <p style="margin-bottom:5px; font-family: sans-serif">Amount $[[${order.payAmount}]]</p>
+              <hr style="width:90%;">
+            </td>
+            <td th:if="${itemStat.index==0}" th:rowspan="${itemStat.size}">
+              <ul>
+                <li style="color:#71B247; font-family: sans-serif" th:if="${order.status==0}">Pending payment</li>
+                <li style="color:#71B247; font-family: sans-serif" th:if="${order.status==1}">Payment confirm</li>
+                <li style="color:#71B247; font-family: sans-serif" th:if="${order.status==2}">Shipped</li>
+                <li style="color:#71B247; font-family: sans-serif" th:if="${order.status==3}">Delivered</li>
+                <li style="color:#71B247; font-family: sans-serif" th:if="${order.status==4}">Canceled</li>
+                <li style="color:#71B247; font-family: sans-serif" th:if="${order.status==5}">Returning</li>
+                <li style="color:#71B247; font-family: sans-serif" th:if="${order.status==6}">Returned</li>
+                <li style="margin:4px 0; font-family: sans-serif " class="hide"><i class="table_i2"></i>Tracking<i class="table_i3"></i>
+                  <div class="hi">
+                    <div class="p-tit">
+                      :390085324974
+                    </div>
+
+                  </div>
+                </li>
+              </ul>
+            </td>
+            <td th:if="${itemStat.index==0}" th:rowspan="${itemStat.size}">
+              <button style="font-family: sans-serif; font-size: xx-small">Confirm Delivered</button>
+              <p style="margin:4px 0; font-family: sans-serif">Cancel order</p>
+            </td>
+          </tr>
+        </table>
+
+        <div class="order_btm">
+          <div style="font-family: sans-serif">
+            <button>Prev</button>
+            <span>1</span>
+            <button>Next</button>
+          </div>
+        </div>
+        <div style="clear:both;"></div>
+      </div>
+
+
+
+
+    </div>
+    <div style="clear:both;"></div>
+  </div>
+
+
+
+
+</body>
+<script src="/static/member/js/jquery-3.1.1.min.js"></script>
+<script src="/static/member/js/index.js"></script>
+
+</html>

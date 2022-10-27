@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="happymall-common" />
+        <module name="happymall-third-party" />
+        <module name="happymall-order" />
+        <module name="renren-generator" />
+        <module name="happymall-auth-server" />
+        <module name="happymall-product" />
+        <module name="happymall-member" />
+        <module name="happymall-ware" />
+        <module name="renren-fast" />
+        <module name="happymall-gateway" />
+        <module name="happymall-coupon" />
+        <module name="happymall-search" />
+        <module name="happymall-cart" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="happymall-auth-server" options="-parameters" />
+      <module name="happymall-cart" options="-parameters" />
+      <module name="happymall-coupon" options="-parameters" />
+      <module name="happymall-gateway" options="-parameters" />
+      <module name="happymall-member" options="-parameters" />
+      <module name="happymall-order" options="-parameters" />
+      <module name="happymall-product" options="-parameters" />
+      <module name="happymall-search" options="-parameters" />
+      <module name="happymall-third-party" options="-parameters" />
+      <module name="happymall-ware" options="-parameters" />
+      <module name="renren-fast" options="-parameters" />
+      <module name="renren-generator" options="-parameters" />
+    </option>
+  </component>
+</project>
