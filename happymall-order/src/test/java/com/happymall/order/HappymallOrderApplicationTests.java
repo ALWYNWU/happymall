@@ -1,6 +1,9 @@
 package com.happymall.order;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> newBranch
 
 import com.happymall.order.entity.OrderReturnReasonEntity;
 import lombok.extern.slf4j.Slf4j;
@@ -22,6 +25,7 @@ import java.util.Date;
 @SpringBootTest
 public class HappymallOrderApplicationTests {
 
+<<<<<<< HEAD
 =======
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -29,9 +33,14 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 public class HappymallOrderApplicationTests {
 
+=======
+>>>>>>> newBranch
     @Test
     public void contextLoads() {
     }
 
+<<<<<<< HEAD
 >>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
+=======
+>>>>>>> newBranch
 }

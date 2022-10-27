@@ -1,6 +1,10 @@
 package com.happymall.coupon;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> newBranch
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.happymall.coupon.entity.CouponEntity;
 import com.happymall.coupon.service.CouponService;
@@ -23,7 +27,11 @@ public class HappymallCouponApplicationTests {
     @Test
     public void contextLoads() throws SQLException {
 
+<<<<<<< HEAD
         List<CouponEntity> list = couponService.list(new QueryWrapper<CouponEntity>().eq("coupon_name",1));
+=======
+        List<CouponEntity> list = couponService.list(new QueryWrapper<CouponEntity>().eq("coupon_name", 1));
+>>>>>>> newBranch
         list.forEach((item) -> {
             System.out.println(item);
         });
@@ -31,6 +39,7 @@ public class HappymallCouponApplicationTests {
 //                "root","root");
 //        System.out.println(conn);
 
+<<<<<<< HEAD
 =======
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -43,4 +52,7 @@ public class HappymallCouponApplicationTests {
 >>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
     }
 
+=======
+    }
+>>>>>>> newBranch
 }

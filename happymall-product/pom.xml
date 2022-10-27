@@ -18,7 +18,7 @@
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
     </properties>
     <dependencies>
-<<<<<<< HEAD
+
 
         <dependency>
             <groupId>com.happymall</groupId>
@@ -84,8 +84,7 @@
 
 
 
-=======
->>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -100,16 +99,9 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-<<<<<<< HEAD
 
-<!--        <dependency>-->
-<!--            <groupId>com.aliyun.oss</groupId>-->
-<!--            <artifactId>aliyun-sdk-oss</artifactId>-->
-<!--            <version>3.5.0</version>-->
-<!--        </dependency>-->
 
-=======
->>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
+
     </dependencies>
     <dependencyManagement>
         <dependencies>

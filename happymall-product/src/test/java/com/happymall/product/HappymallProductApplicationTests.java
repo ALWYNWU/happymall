@@ -1,5 +1,8 @@
 package com.happymall.product;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> newBranch
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -88,6 +91,7 @@ public class HappymallProductApplicationTests {
         brandService.save(brandEntity);
         System.out.println("Success!");*/
 
+<<<<<<< HEAD
         List<BrandEntity> list = brandService.list(new QueryWrapper<BrandEntity>().eq("brand_id",1L));
         list.forEach((item) -> {
             System.out.println(item);
@@ -104,6 +108,12 @@ public class HappymallProductApplicationTests {
     @Test
     public void contextLoads() {
 >>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
+=======
+        List<BrandEntity> list = brandService.list(new QueryWrapper<BrandEntity>().eq("brand_id", 1L));
+        list.forEach((item) -> {
+            System.out.println(item);
+        });
+>>>>>>> newBranch
     }
 
 }

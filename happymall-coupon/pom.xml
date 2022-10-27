@@ -13,15 +13,12 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>happymall-coupon</name>
     <description>happymall-coupon service</description>
-<<<<<<< HEAD
 
-=======
->>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
     <properties>
         <java.version>1.8</java.version>
         <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
     </properties>
-<<<<<<< HEAD
+
 
     <dependencies>
         <dependency>
@@ -30,6 +27,8 @@
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
 
+
+
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
@@ -37,17 +36,26 @@
         </dependency>
 
         <dependency>
+
+            <groupId>com.happymall</groupId>
+            <artifactId>happymall-common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-=======
-    <dependencies>
+
+
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
->>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
+
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
@@ -58,7 +66,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-<<<<<<< HEAD
+
 
         <dependency>
             <groupId>mysql</groupId>
@@ -66,8 +74,7 @@
             <version>8.0.28</version>
         </dependency>
 
-=======
->>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
+
     </dependencies>
     <dependencyManagement>
         <dependencies>

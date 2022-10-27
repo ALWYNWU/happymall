@@ -1,6 +1,10 @@
 package com.happymall.ware;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> newBranch
 
 import com.happymall.ware.service.WareSkuService;
 import org.junit.Test;
@@ -20,6 +24,7 @@ public class HappymallWareApplicationTests {
     public void contextLoads() {
         System.out.println(wareSkuService.getSkuHasStock(1L));
 
+<<<<<<< HEAD
 =======
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,6 +35,8 @@ public class HappymallWareApplicationTests {
     @Test
     public void contextLoads() {
 >>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
+=======
+>>>>>>> newBranch
     }
 
 }

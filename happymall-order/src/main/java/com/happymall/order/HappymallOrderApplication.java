@@ -1,5 +1,9 @@
 package com.happymall.order;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> newBranch
 import org.springframework.amqp.rabbit.annotation.EnableRabbit;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,12 +15,15 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
 @EnableRabbit
 @EnableFeignClients
 @EnableDiscoveryClient
+<<<<<<< HEAD
 =======
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 >>>>>>> 70dfac08787284ad44496d1cdd80f3e135a5c2fd
+=======
+>>>>>>> newBranch
 @SpringBootApplication
 public class HappymallOrderApplication {
 
