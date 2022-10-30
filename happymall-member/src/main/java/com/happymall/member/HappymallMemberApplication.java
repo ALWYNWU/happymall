@@ -17,8 +17,8 @@ import org.springframework.session.data.redis.config.annotation.web.http.EnableR
  */
 @EnableFeignClients(basePackages = "com.happymall.member.feign")
 @EnableDiscoveryClient
-@SpringBootApplication
 @EnableRedisHttpSession
+@SpringBootApplication
 public class HappymallMemberApplication {
 
     public static void main(String[] args) {

@@ -133,7 +133,7 @@
             <version>2.1.0.RELEASE</version>
         </dependency>
 
-<!--        &lt;!&ndash;配置中心&ndash;&gt;-->
+        <!--        &lt;!&ndash;配置中心&ndash;&gt;-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>

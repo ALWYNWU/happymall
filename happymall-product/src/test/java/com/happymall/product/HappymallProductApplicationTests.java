@@ -87,10 +87,12 @@ public class HappymallProductApplicationTests {
         brandService.save(brandEntity);
         System.out.println("Success!");*/
 
-        List<BrandEntity> list = brandService.list(new QueryWrapper<BrandEntity>().eq("brand_id", 1L));
+
+        List<BrandEntity> list = brandService.list(new QueryWrapper<BrandEntity>().eq("brand_id",1L));
         list.forEach((item) -> {
             System.out.println(item);
         });
+
     }
 
 }

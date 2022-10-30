@@ -1,7 +1,5 @@
 package com.happymall.ware;
 
-
-
 import com.happymall.ware.service.WareSkuService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,6 +17,7 @@ public class HappymallWareApplicationTests {
     @Test
     public void contextLoads() {
         System.out.println(wareSkuService.getSkuHasStock(1L));
+
 
     }
 

@@ -1,6 +1,4 @@
 package com.happymall.coupon;
-
-
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.happymall.coupon.entity.CouponEntity;
 import com.happymall.coupon.service.CouponService;
@@ -23,7 +21,10 @@ public class HappymallCouponApplicationTests {
     @Test
     public void contextLoads() throws SQLException {
 
-        List<CouponEntity> list = couponService.list(new QueryWrapper<CouponEntity>().eq("coupon_name", 1));
+
+        List<CouponEntity> list = couponService.list(new QueryWrapper<CouponEntity>().eq("coupon_name",1));
+
+
         list.forEach((item) -> {
             System.out.println(item);
         });
@@ -31,5 +32,7 @@ public class HappymallCouponApplicationTests {
 //                "root","root");
 //        System.out.println(conn);
 
+
     }
+
 }
