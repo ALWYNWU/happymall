@@ -11,7 +11,6 @@ import java.util.List;
 public class Cart {
 
     List<CartItem> items;
-
     private Integer countNum;
     private Integer countType;
     private BigDecimal totalAmount;

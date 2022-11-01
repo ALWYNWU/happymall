@@ -65,8 +65,5 @@ public class CartInterceptor implements HandlerInterceptor {
             cookie.setMaxAge(CartConstant.TEMP_USER_COOKIE_TIMEOUT);
             response.addCookie(cookie);
         }
-
-
-
     }
 }

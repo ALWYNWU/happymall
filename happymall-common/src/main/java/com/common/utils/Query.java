@@ -17,7 +17,6 @@ import org.apache.commons.lang.StringUtils;
 import java.util.Map;
 
 /**
- * 查询参数
  *
  * @author Mark sunlightcs@gmail.com
  */
@@ -28,7 +27,7 @@ public class Query<T> {
     }
 
     public IPage<T> getPage(Map<String, Object> params, String defaultOrderField, boolean isAsc) {
-        //分页参数
+
         long curPage = 1;
         long limit = 10;
 

@@ -30,9 +30,6 @@ public class GrowthChangeHistoryController {
     @Autowired
     private GrowthChangeHistoryService growthChangeHistoryService;
 
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = growthChangeHistoryService.queryPage(params);
@@ -40,10 +37,6 @@ public class GrowthChangeHistoryController {
         return R.ok().put("page", page);
     }
 
-
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		GrowthChangeHistoryEntity growthChangeHistory = growthChangeHistoryService.getById(id);
@@ -51,9 +44,6 @@ public class GrowthChangeHistoryController {
         return R.ok().put("growthChangeHistory", growthChangeHistory);
     }
 
-    /**
-     * 保存
-     */
     @RequestMapping("/save")
     public R save(@RequestBody GrowthChangeHistoryEntity growthChangeHistory){
 		growthChangeHistoryService.save(growthChangeHistory);
@@ -61,9 +51,6 @@ public class GrowthChangeHistoryController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
     @RequestMapping("/update")
     public R update(@RequestBody GrowthChangeHistoryEntity growthChangeHistory){
 		growthChangeHistoryService.updateById(growthChangeHistory);
@@ -71,9 +58,6 @@ public class GrowthChangeHistoryController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		growthChangeHistoryService.removeByIds(Arrays.asList(ids));

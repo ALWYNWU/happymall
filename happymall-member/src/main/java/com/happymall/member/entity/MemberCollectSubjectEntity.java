@@ -24,21 +24,13 @@ public class MemberCollectSubjectEntity implements Serializable {
 	 */
 	@TableId
 	private Long id;
-	/**
-	 * subject_id
-	 */
+
 	private Long subjectId;
-	/**
-	 * subject_name
-	 */
+
 	private String subjectName;
-	/**
-	 * subject_img
-	 */
+
 	private String subjectImg;
-	/**
-	 * 活动url
-	 */
+
 	private String subjectUrll;
 
 }

@@ -24,9 +24,6 @@ public class MemberCollectSpuEntity implements Serializable {
 	 */
 	@TableId
 	private Long id;
-	/**
-	 * 会员id
-	 */
 	private Long memberId;
 	/**
 	 * spu_id

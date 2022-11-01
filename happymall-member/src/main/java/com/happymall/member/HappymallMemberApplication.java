@@ -7,14 +7,6 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
 
-/**
- * 怎样远程调用别的服务
- * 1. 引入open-feign
- * 2. 编写一个interface 告诉springCloud这个接口需要调用远程服务
- *      声明接口的每一个方法是调用哪个远程服务的哪一个请求
- * 3. 开启远程调用
- *
- */
 @EnableFeignClients(basePackages = "com.happymall.member.feign")
 @EnableDiscoveryClient
 @EnableRedisHttpSession

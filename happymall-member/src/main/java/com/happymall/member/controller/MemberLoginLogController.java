@@ -29,10 +29,6 @@ import com.common.utils.R;
 public class MemberLoginLogController {
     @Autowired
     private MemberLoginLogService memberLoginLogService;
-
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = memberLoginLogService.queryPage(params);
@@ -40,10 +36,6 @@ public class MemberLoginLogController {
         return R.ok().put("page", page);
     }
 
-
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		MemberLoginLogEntity memberLoginLog = memberLoginLogService.getById(id);
@@ -51,9 +43,6 @@ public class MemberLoginLogController {
         return R.ok().put("memberLoginLog", memberLoginLog);
     }
 
-    /**
-     * 保存
-     */
     @RequestMapping("/save")
     public R save(@RequestBody MemberLoginLogEntity memberLoginLog){
 		memberLoginLogService.save(memberLoginLog);
@@ -61,9 +50,6 @@ public class MemberLoginLogController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
     @RequestMapping("/update")
     public R update(@RequestBody MemberLoginLogEntity memberLoginLog){
 		memberLoginLogService.updateById(memberLoginLog);
@@ -71,9 +57,6 @@ public class MemberLoginLogController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		memberLoginLogService.removeByIds(Arrays.asList(ids));

@@ -29,10 +29,6 @@ import com.common.utils.R;
 public class MemberStatisticsInfoController {
     @Autowired
     private MemberStatisticsInfoService memberStatisticsInfoService;
-
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = memberStatisticsInfoService.queryPage(params);
@@ -40,10 +36,6 @@ public class MemberStatisticsInfoController {
         return R.ok().put("page", page);
     }
 
-
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		MemberStatisticsInfoEntity memberStatisticsInfo = memberStatisticsInfoService.getById(id);
@@ -51,9 +43,6 @@ public class MemberStatisticsInfoController {
         return R.ok().put("memberStatisticsInfo", memberStatisticsInfo);
     }
 
-    /**
-     * 保存
-     */
     @RequestMapping("/save")
     public R save(@RequestBody MemberStatisticsInfoEntity memberStatisticsInfo){
 		memberStatisticsInfoService.save(memberStatisticsInfo);
@@ -61,9 +50,6 @@ public class MemberStatisticsInfoController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
     @RequestMapping("/update")
     public R update(@RequestBody MemberStatisticsInfoEntity memberStatisticsInfo){
 		memberStatisticsInfoService.updateById(memberStatisticsInfo);
@@ -71,9 +57,6 @@ public class MemberStatisticsInfoController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		memberStatisticsInfoService.removeByIds(Arrays.asList(ids));

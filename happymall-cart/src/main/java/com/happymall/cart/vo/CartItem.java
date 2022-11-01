@@ -15,8 +15,6 @@ import java.util.List;
 @Data
 public class CartItem implements Serializable{
     private Long skuId;
-
-    // Selected status
     private Boolean checked;
     private String title;
     private String image;

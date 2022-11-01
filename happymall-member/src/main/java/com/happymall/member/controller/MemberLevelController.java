@@ -30,9 +30,6 @@ public class MemberLevelController {
     @Autowired
     private MemberLevelService memberLevelService;
 
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = memberLevelService.queryPage(params);
@@ -40,10 +37,6 @@ public class MemberLevelController {
         return R.ok().put("page", page);
     }
 
-
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		MemberLevelEntity memberLevel = memberLevelService.getById(id);
@@ -51,9 +44,6 @@ public class MemberLevelController {
         return R.ok().put("memberLevel", memberLevel);
     }
 
-    /**
-     * 保存
-     */
     @RequestMapping("/save")
     public R save(@RequestBody MemberLevelEntity memberLevel){
 		memberLevelService.save(memberLevel);
@@ -61,9 +51,6 @@ public class MemberLevelController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
     @RequestMapping("/update")
     public R update(@RequestBody MemberLevelEntity memberLevel){
 		memberLevelService.updateById(memberLevel);
@@ -71,14 +58,10 @@ public class MemberLevelController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		memberLevelService.removeByIds(Arrays.asList(ids));
 
         return R.ok();
     }
-
 }

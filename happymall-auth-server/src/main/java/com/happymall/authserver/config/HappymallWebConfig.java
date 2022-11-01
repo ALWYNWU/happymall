@@ -11,10 +11,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  */
 @Configuration
 public class HappymallWebConfig implements WebMvcConfigurer {
-        /**·
-         * 视图映射:发送一个请求，直接跳转到一个页面
-         * @param registry
-         */
+
         @Override
         public void addViewControllers(ViewControllerRegistry registry) {
             registry.addViewController("/register.html").setViewName("register");
