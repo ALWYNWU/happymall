@@ -27,31 +27,24 @@
     </div>
 </div>
 <ul class="left_floor">
-    <li class="left_floor_xiang">享品质</li>
-    <li class="left_floor_fu">服饰美妆</li>
-    <li class="left_floor_jia">家电手机</li>
-    <li class="left_floor_dian">电脑数码</li>
-    <li class="left_floor_3C">3C运动</li>
-    <li class="left_floor_ai">爱吃</li>
-    <li class="left_floor_mu">母婴家居</li>
-    <li class="left_floor_tu">图书汽车</li>
-    <li class="left_floor_you">游戏金融</li>
-    <li class="left_floor_lv">旅行健康</li>
-    <li class="left_floor_hai">还没逛够</li>
-    <li class="left_floor_ding">顶部</li>
+
 </ul>
 <header>
 
     <div class="header_head">
         <div class="header_head_box">
-            <a href="http://happymall.com" class="img"><img style="width: 169px; height: 52px" src="/static/login/JD_img/newlogo.jpg"/></a>
+            <a href="http://happymall.com" class="img"><img style="width: 169px; height: 52px"
+                                                            src="/static/login/JD_img/newlogo.jpg"/></a>
             <ul>
                 <li>
-                    <a  style="font-family: sans-serif" th:if="${session.loginUser!=null}">Welcome: <b>[[${session.loginUser==null?' ':session.loginUser.nickname}]]</b></a>
-                    <a href="http://auth.happymall.com/login.html" th:if="${session.loginUser==null}" style="font-family: sans-serif"><b>Sign in</b></a>
+                    <a style="font-family: sans-serif" th:if="${session.loginUser!=null}">Welcome: <b>[[${session.loginUser==null?'
+                        ':session.loginUser.nickname}]]</b></a>
+                    <a href="http://auth.happymall.com/login.html" th:if="${session.loginUser==null}"
+                       style="font-family: sans-serif"><b>Sign in</b></a>
                 </li>
                 <li>
-                    <a th:if="${session.loginUser==null}" href="http://auth.happymall.com/register.html" style="font-family: sans-serif">Register</a>
+                    <a th:if="${session.loginUser==null}" href="http://auth.happymall.com/register.html"
+                       style="font-family: sans-serif">Register</a>
                 </li>
                 <span>|</span>
                 <li>
@@ -73,11 +66,11 @@
         <div class="header_ico">
             <div class="header_gw">
                 <a href="http://cart.happymall.com/cart.html"><img src="/index/img/img_15.png"/></a>
-                <span><a href="http://cart.happymall.com/cart.html" style="font-family: sans-serif"><b>Cart</b></a></span>
+                <span><a href="http://cart.happymall.com/cart.html"
+                         style="font-family: sans-serif"><b>Cart</b></a></span>
             </div>
 
         </div>
-
 
 
     </div>
@@ -98,11 +91,13 @@
                 <div class="swiper-container swiper1">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <a href="#"><img style="width: 790px; height: 340px" src="https://media-www.canadiantire.ca/banners/promo-content/2022/09/odp-2022-309hp-3tile-shopping-clearance-en.png"/></a>
+                            <a href="#"><img style="width: 790px; height: 340px"
+                                             src="https://media-www.canadiantire.ca/banners/promo-content/2022/09/odp-2022-309hp-3tile-shopping-clearance-en.png"/></a>
                         </div>
 
                         <div class="swiper-slide">
-                            <a href="#"><img style="width: 790px; height: 340px" src="https://media-www.canadiantire.ca/banners/promo-content/2022/09/odp-2022-309hp-3tile-shopping-hotsale-en.png"/></a>
+                            <a href="#"><img style="width: 790px; height: 340px"
+                                             src="https://media-www.canadiantire.ca/banners/promo-content/2022/09/odp-2022-309hp-3tile-shopping-hotsale-en.png"/></a>
                         </div>
                     </div>
                     <div class="swiper-pagination"></div>
@@ -110,25 +105,18 @@
                     <div class="swiper-button-prev swiper-button-white"></div>
                 </div>
                 <div class="header_main_center_b">
-                    <a href="#"><img style="width: 390px; height: 130px" src="https://media-www.canadiantire.ca/banners/category-content/2022/canadiantire-ca-home-pets-2022-/ct-2022-pet-campaign-banner-slim-banner.png"/></a>
-                    <a href="#"><img style="width: 390px; height: 130px" src="https://media-www.canadiantire.ca/banners/category-content/2022/canadiantire-ca-automotive-2022-/ct-2022-auto-bts-lp-slim-banner-wk2-en.png"/></a>
+                    <a href="#"><img style="width: 390px; height: 130px"
+                                     src="https://media-www.canadiantire.ca/banners/category-content/2022/canadiantire-ca-home-pets-2022-/ct-2022-pet-campaign-banner-slim-banner.png"/></a>
+                    <a href="#"><img style="width: 390px; height: 130px"
+                                     src="https://media-www.canadiantire.ca/banners/category-content/2022/canadiantire-ca-automotive-2022-/ct-2022-auto-bts-lp-slim-banner-wk2-en.png"/></a>
                 </div>
             </div>
 
         </div>
     </div>
-    <!--      <div class="header_banner1">-->
-    <!--        <a href="/static/#" class="a">-->
-    <!--  						<img src="/index/img/5a1e5ce2N034ce344.png" class="aa" />-->
-    <!--  					</a>-->
-    <!--        <div class="header_banner1_div">-->
-    <!--          <p>X</p>-->
-    <!--        </div>-->
-    <!--      </div>-->
+
     </div>
 </header>
-
-
 
 
 </body>

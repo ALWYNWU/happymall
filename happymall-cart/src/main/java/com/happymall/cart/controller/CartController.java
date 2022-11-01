@@ -62,7 +62,6 @@ public class CartController {
      * If it is the first time user(no login) use cart, will give user a temporary id,
      * cookie: user-key, and this id will expire after one month,
      * explorer will save it and access website with it
-     * @return
      */
     @GetMapping("/cart.html")
     public String cartListPAge(Model model) throws ExecutionException, InterruptedException {

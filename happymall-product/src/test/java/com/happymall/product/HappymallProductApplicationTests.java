@@ -25,7 +25,7 @@ import java.util.Map;
 import java.util.UUID;
 
 @Slf4j
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 @SpringBootTest
 public class HappymallProductApplicationTests {
 
@@ -93,6 +93,13 @@ public class HappymallProductApplicationTests {
             System.out.println(item);
         });
 
+    }
+
+    @Test
+    public void testB(){
+//        System.out.println(100 >> 3 & 1);
+        int n = 100;
+        System.out.println(2 ^ 3 ^ 4 ^ 3 ^ 4);
     }
 
 }

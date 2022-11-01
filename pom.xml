@@ -9,8 +9,6 @@
     <name>happymall</name>
 
     <description>Aggregation service</description>
-
-
     <packaging>pom</packaging>
 
     <modules>
@@ -22,12 +20,9 @@
         <module>renren-fast</module>
         <module>renren-generator</module>
         <module>happymall-common</module>
-
         <module>renren-fast</module>
         <module>renren-generator</module>
         <module>happymall-common</module>
-
-
     </modules>
 
 

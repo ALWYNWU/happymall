@@ -30,9 +30,6 @@ public class OrderItemController {
     @Autowired
     private OrderItemService orderItemService;
 
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = orderItemService.queryPage(params);
@@ -40,10 +37,6 @@ public class OrderItemController {
         return R.ok().put("page", page);
     }
 
-
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		OrderItemEntity orderItem = orderItemService.getById(id);
@@ -51,9 +44,6 @@ public class OrderItemController {
         return R.ok().put("orderItem", orderItem);
     }
 
-    /**
-     * 保存
-     */
     @RequestMapping("/save")
     public R save(@RequestBody OrderItemEntity orderItem){
 		orderItemService.save(orderItem);
@@ -61,9 +51,6 @@ public class OrderItemController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
     @RequestMapping("/update")
     public R update(@RequestBody OrderItemEntity orderItem){
 		orderItemService.updateById(orderItem);
@@ -71,9 +58,7 @@ public class OrderItemController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		orderItemService.removeByIds(Arrays.asList(ids));

@@ -28,7 +28,6 @@ public class OrderController {
         return R.ok().setData(orderEntity);
     }
 
-
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = orderService.queryPage(params);
@@ -43,16 +42,12 @@ public class OrderController {
         return R.ok().put("page", page);
     }
 
-
-
-
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		OrderEntity order = orderService.getById(id);
 
         return R.ok().put("order", order);
     }
-
 
     @RequestMapping("/save")
     public R save(@RequestBody OrderEntity order){
@@ -61,14 +56,12 @@ public class OrderController {
         return R.ok();
     }
 
-
     @RequestMapping("/update")
     public R update(@RequestBody OrderEntity order){
 		orderService.updateById(order);
 
         return R.ok();
     }
-
 
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){

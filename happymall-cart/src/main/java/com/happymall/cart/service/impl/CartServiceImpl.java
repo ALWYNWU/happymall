@@ -110,12 +110,14 @@ public class CartServiceImpl implements CartService {
             if (tempCartItems != null && tempCartItems.size() > 0){
                 // Merge cart
                 for (CartItem item : tempCartItems) {
+
                     /**
                      * addToCart will call getCartOps to get redis operation object, and getCartOps will
                      * check login status, it will get user id(logged) and add these items to a logged cart,
                      * so the logged cart in redis will add these item, after this, getCartItems will get all
                      * these items and return
                      */
+
                     addToCart(item.getSkuId(), item.getCount());
                 }
                 // Clear temporary cart
@@ -192,7 +194,6 @@ public class CartServiceImpl implements CartService {
     public void deleteItem(Long skuId) {
         BoundHashOperations<String, Object, Object> cartOps = getCartOps();
         cartOps.delete(skuId.toString());
-
     }
 
     @Override

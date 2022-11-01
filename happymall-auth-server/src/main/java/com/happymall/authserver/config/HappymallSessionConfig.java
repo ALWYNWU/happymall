@@ -20,7 +20,6 @@ public class HappymallSessionConfig {
     public CookieSerializer cookieSerializer(){
         DefaultCookieSerializer cookieSerializer = new DefaultCookieSerializer();
         cookieSerializer.setDomainName("happymall.com");
-
         return cookieSerializer;
     }
 

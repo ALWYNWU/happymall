@@ -9,11 +9,11 @@ import lombok.Data;
  */
 @Data
 public class SocialUser {
-//    {
-//        "access_token": "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",
-//            "token_type": "bearer",
-//            "scope": ""
-//    }
+    /*{
+        "access_token": "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",
+        "token_type": "bearer",
+        "scope": ""
+    }*/
     private String access_token;
     private String token_type;
     private String scope;

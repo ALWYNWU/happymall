@@ -186,29 +186,13 @@
 			<p>
 				<span>delete</span><span><img src="img/错误.png" alt=""></span>
 			</p>
-			<div>
-				<dl>
-					<dt><img src="img/感叹三角形 (2).png" alt=""></dt>
-					<dd>
-						<li>移到关注</li>
-						<li>移动后选中商品将不再购物车中显示</li>
-					</dd>
-				</dl>
-			</div>
+
 			<div>
 				<button type="button">确定</button>
 				<button type="button">取消</button>
 			</div>
 		</div>
-		<div class="One_clearShop">
-			<p>
-				<span>提示</span><span><img src="img/错误.png" alt=""></span>
-			</p>
-			<dl>
-				<dt><img src="img/感叹三角形 (2).png" alt=""></dt>
-				<dd>没有下柜商品!</dd>
-			</dl>
-		</div>
+
 		<!--底部-->
 
 		<div class="one_footer">
@@ -221,28 +205,12 @@
 			window.location.href = "http://order.happymall.com/toTrade";
 		}
 
-		function toItem(skuId) {
-			window.location.href = "http://item.gmall.com:8084/" + skuId + ".html";
-		}
 
 		function login() {
 			var s = encodeURIComponent("http://cart.gmall.com:8087/cartList");
 			window.location.href = "http://auth.happymall.com/login.html";
 		}
 
-		function checkSku(chkbox) {
-			var skuId = $(chkbox).attr("value");
-			var checked = $(chkbox).prop("checked");
-			var isCheckedFlag = "0";
-			if (checked) {
-				isCheckedFlag = "1";
-			}
-			var param = "isChecked=" + isCheckedFlag + "&" + "skuId=" + skuId;
-			$.post("checkCart", param, function(data) {
-				sumSumPrice();
-			});
-
-		}
 
 
 
@@ -569,31 +537,8 @@
 			$(".One_mb").show();
 			$(".One_isDel").show();
 			var that = $(this);
-			//确定delete
-			/*        $(".One_isDel>div:last-child button:first-child").click(function(){
-			            $(".One_mb").hide();
-			            $(".One_isDel").hide();
-			            that.parent().parent().parent().parent().remove();
-			            // 移除结账固定定位
-			            // if($(".check").length==1){
-			            // 	$(".fix").remove();
-			            // }
-			            if($(".fix").offset().top>$(".fix1").offset().top){
-			                $(".fix").hide();
-			            }
-			            if($(".check").length==0){
-			                $(".allCheck").prop("checked",false);
-			                $(".sumNum").html("0");
-			                $(".fnt").html("￥ 0.00");
-			            }
-			        })*/
 		})
-		/*    //页面滚动delete去结算固定定位隐藏
-		    $(document).scroll(function(){
-		        if($(".fix").offset().top>$(".fix1").offset().top){
-		            $(".fix").hide();
-		        }
-		    })*/
+
 		$(".One_isDel>div:last-child button").mouseover(function() {
 			$(this).css("cursor", "pointer");
 		})
@@ -623,18 +568,6 @@
 				$(".fnt").html("￥" + zzj + ".00")
 			})
 
-			/*        $(".One_ShopCon ul li>div:nth-child(2) ol li:nth-child(5) .zj").each(function(){
-			            kong+=parseFloat($(this).html().substring(1))
-			        })
-			        $(".fnt").html("￥"+kong+".00")*/
-		}
-		//封装总数量函数
-		function sumSumNum() {
-			var kong = 0;
-			$(".One_ShopCon ul li>div:nth-child(2) ol>li:nth-child(4) p:first-child span:nth-child(2)").each(function() {
-				kong += parseFloat($(this).html())
-			})
-			$(".sumNum").html(kong);
 		}
 
 		$(".One_ShopCon ul li>div:nth-child(2)>ol>li:nth-child(2)>dd").mouseover(function() {
@@ -650,11 +583,6 @@
 			$(this).parent().children(".nmbd").slideToggle(300);
 			var dis = $(this).parent().children(".nmbd").css("display");
 			console.log(dis);
-			// if(dis=="block"){
-			// 	$(".hahaha").css("transform","rotateX(-180deg)")
-			// }else{
-			// 	$(".hahaha").css("transform","rotateX(360deg)")
-			// }
 		})
 		$(".nmbd dd:last-child button:first-child").click(function() {
 			$(this).parent().parent().slideUp(100)
@@ -662,15 +590,6 @@
 		$(".nmbd dd:last-child button:last-child").click(function() {
 			$(this).parent().parent().slideUp(100)
 		})
-
-
-
-
-
-
-
-
-
 
 		//active
 		$(".one_main_div1 .one_main_ul>li").mouseover(function() {
