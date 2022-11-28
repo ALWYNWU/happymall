@@ -18,8 +18,6 @@ import com.common.utils.R;
 
 
 /**
- * 商品三级分类
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11
@@ -42,9 +40,6 @@ public class CategoryController {
     }
 
 
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{catId}")
     public R info(@PathVariable("catId") Long catId){
 		CategoryEntity category = categoryService.getById(catId);
@@ -52,9 +47,7 @@ public class CategoryController {
         return R.ok().put("data", category);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody CategoryEntity category){
 		categoryService.save(category);
@@ -62,9 +55,7 @@ public class CategoryController {
         return R.ok();
     }
 
-    /**
-     * Update
-     */
+
     @CacheEvict(value = "category", allEntries = true)
     @RequestMapping("/update/sort")
     public R updateSort(@RequestBody CategoryEntity[] category){
@@ -94,9 +85,6 @@ public class CategoryController {
 
         // 1. Checks whether the currently deleted category is referenced elsewhere
         categoryService.removeCategoryByIds(Arrays.asList(catIds));
-
-//		categoryService.removeByIds(Arrays.asList(catIds));
-
         return R.ok();
     }
 

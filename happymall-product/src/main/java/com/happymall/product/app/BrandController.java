@@ -21,8 +21,6 @@ import javax.management.remote.rmi._RMIConnection_Stub;
 
 
 /**
- * 品牌
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11

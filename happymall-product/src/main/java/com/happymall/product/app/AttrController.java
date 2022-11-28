@@ -18,8 +18,6 @@ import com.common.utils.R;
 
 
 /**
- * 商品属性
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11
@@ -59,11 +57,6 @@ public class AttrController {
     }
 
 
-
-
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = attrService.queryPage(params);
@@ -82,9 +75,6 @@ public class AttrController {
         return R.ok().put("attr", responseVo);
     }
 
-    /**
-     * 保存
-     */
     @RequestMapping("/save")
     public R save(@RequestBody AttrVo attr){
 		attrService.saveAttr(attr);
@@ -92,9 +82,6 @@ public class AttrController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
     @RequestMapping("/update")
     public R update(@RequestBody AttrVo attr){
 		attrService.updateAttr(attr);
@@ -111,9 +98,6 @@ public class AttrController {
     }
 
 
-    /**
-     * 删除
-     */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] attrIds){
 		attrService.removeByIds(Arrays.asList(attrIds));

@@ -12,8 +12,6 @@ import com.common.exception.RRException;
 import org.apache.commons.lang.StringUtils;
 
 /**
- * 数据校验
- *
  * @author Mark sunlightcs@gmail.com
  */
 public abstract class Assert {
