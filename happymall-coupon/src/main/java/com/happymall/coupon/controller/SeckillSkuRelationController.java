@@ -30,9 +30,6 @@ public class SeckillSkuRelationController {
     @Autowired
     private SeckillSkuRelationService seckillSkuRelationService;
 
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = seckillSkuRelationService.queryPage(params);
@@ -41,9 +38,6 @@ public class SeckillSkuRelationController {
     }
 
 
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		SeckillSkuRelationEntity seckillSkuRelation = seckillSkuRelationService.getById(id);
@@ -51,9 +45,7 @@ public class SeckillSkuRelationController {
         return R.ok().put("seckillSkuRelation", seckillSkuRelation);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody SeckillSkuRelationEntity seckillSkuRelation){
 		seckillSkuRelationService.save(seckillSkuRelation);
@@ -61,9 +53,7 @@ public class SeckillSkuRelationController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
+
     @RequestMapping("/update")
     public R update(@RequestBody SeckillSkuRelationEntity seckillSkuRelation){
 		seckillSkuRelationService.updateById(seckillSkuRelation);
@@ -71,9 +61,7 @@ public class SeckillSkuRelationController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		seckillSkuRelationService.removeByIds(Arrays.asList(ids));

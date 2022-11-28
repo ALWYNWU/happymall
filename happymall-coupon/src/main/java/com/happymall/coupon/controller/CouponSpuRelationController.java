@@ -30,9 +30,6 @@ public class CouponSpuRelationController {
     @Autowired
     private CouponSpuRelationService couponSpuRelationService;
 
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = couponSpuRelationService.queryPage(params);
@@ -40,10 +37,6 @@ public class CouponSpuRelationController {
         return R.ok().put("page", page);
     }
 
-
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		CouponSpuRelationEntity couponSpuRelation = couponSpuRelationService.getById(id);
@@ -51,9 +44,7 @@ public class CouponSpuRelationController {
         return R.ok().put("couponSpuRelation", couponSpuRelation);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody CouponSpuRelationEntity couponSpuRelation){
 		couponSpuRelationService.save(couponSpuRelation);
@@ -61,9 +52,7 @@ public class CouponSpuRelationController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
+
     @RequestMapping("/update")
     public R update(@RequestBody CouponSpuRelationEntity couponSpuRelation){
 		couponSpuRelationService.updateById(couponSpuRelation);
@@ -71,9 +60,7 @@ public class CouponSpuRelationController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		couponSpuRelationService.removeByIds(Arrays.asList(ids));

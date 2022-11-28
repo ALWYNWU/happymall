@@ -8,8 +8,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 秒杀活动
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-08-18 00:48:15
@@ -24,29 +22,17 @@ public class SeckillPromotionEntity implements Serializable {
 	 */
 	@TableId
 	private Long id;
-	/**
-	 * 活动标题
-	 */
+
 	private String title;
-	/**
-	 * 开始日期
-	 */
+
 	private Date startTime;
-	/**
-	 * 结束日期
-	 */
+
 	private Date endTime;
-	/**
-	 * 上下线状态
-	 */
+
 	private Integer status;
-	/**
-	 * 创建时间
-	 */
+
 	private Date createTime;
-	/**
-	 * 创建人
-	 */
+
 	private Long userId;
 
 }

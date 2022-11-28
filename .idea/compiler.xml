@@ -7,14 +7,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="happymall-third-dparty" />
-        <module name="happymall-common" />
-        <module name="happymall-third-party" />
-        <module name="happymall-order" />
         <module name="happymall-auth-server" />
         <module name="happymall-product" />
+        <module name="happymall-common" />
         <module name="happymall-member" />
         <module name="happymall-ware" />
+        <module name="happymall-third-party" />
+        <module name="happymall-order" />
         <module name="renren-fast" />
         <module name="happymall-gateway" />
         <module name="happymall-coupon" />
@@ -22,9 +21,7 @@
         <module name="happymall-cart" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8">
-      <module name="renren-generator" target="1.8" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="8" />
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -36,7 +33,7 @@
       <module name="happymall-order" options="-parameters" />
       <module name="happymall-product" options="-parameters" />
       <module name="happymall-search" options="-parameters" />
-      <module name="happymall-third-dparty" options="-parameters" />
+      <module name="happymall-third-party" options="-parameters" />
       <module name="happymall-ware" options="-parameters" />
       <module name="renren-fast" options="-parameters" />
       <module name="renren-generator" options="-parameters" />

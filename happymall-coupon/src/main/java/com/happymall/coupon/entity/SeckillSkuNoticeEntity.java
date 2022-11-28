@@ -8,8 +8,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 秒杀商品通知订阅
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-08-18 00:48:15
@@ -32,21 +30,13 @@ public class SeckillSkuNoticeEntity implements Serializable {
 	 * sku_id
 	 */
 	private Long skuId;
-	/**
-	 * 活动场次id
-	 */
+
 	private Long sessionId;
-	/**
-	 * 订阅时间
-	 */
+
 	private Date subcribeTime;
-	/**
-	 * 发送时间
-	 */
+
 	private Date sendTime;
-	/**
-	 * 通知方式[0-短信，1-邮件]
-	 */
+
 	private Integer noticeType;
 
 }

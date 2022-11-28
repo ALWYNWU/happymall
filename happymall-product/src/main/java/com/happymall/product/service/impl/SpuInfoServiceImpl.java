@@ -256,10 +256,10 @@ public class SpuInfoServiceImpl extends ServiceImpl<SpuInfoDao, SpuInfoEntity> i
         List<SkuInfoEntity> skuInfoEntities =  skuInfoService.getSkusBySpuId(spuId);
         List<Long> skuIdList = skuInfoEntities.stream().map(SkuInfoEntity::getSkuId).collect(Collectors.toList());
 
-        // 2. Query attributes of current sku that can be used to be index
+        // 2. Query attributes of current sku that can be used to be indexed
         List<ProductAttrValueEntity> baseAttrs = productAttrValueService.baseAttrListForSpu(spuId);
         // Get all attributes id
-        List<Long> attrIds = baseAttrs.stream().map(attr -> attr.getAttrId()).collect(Collectors.toList());
+        List<Long> attrIds = baseAttrs.stream().map(ProductAttrValueEntity::getAttrId).collect(Collectors.toList());
 
         // Select corresponding attribute entities' id which search type equal 1
         List<Long> indexedAttrIds =  attrService.selectIndexedAttrs(attrIds);

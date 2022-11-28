@@ -30,9 +30,6 @@ public class SkuLadderController {
     @Autowired
     private SkuLadderService skuLadderService;
 
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = skuLadderService.queryPage(params);
@@ -41,9 +38,6 @@ public class SkuLadderController {
     }
 
 
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		SkuLadderEntity skuLadder = skuLadderService.getById(id);
@@ -51,9 +45,7 @@ public class SkuLadderController {
         return R.ok().put("skuLadder", skuLadder);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody SkuLadderEntity skuLadder){
 		skuLadderService.save(skuLadder);
@@ -61,9 +53,7 @@ public class SkuLadderController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
+
     @RequestMapping("/update")
     public R update(@RequestBody SkuLadderEntity skuLadder){
 		skuLadderService.updateById(skuLadder);
@@ -71,9 +61,7 @@ public class SkuLadderController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		skuLadderService.removeByIds(Arrays.asList(ids));

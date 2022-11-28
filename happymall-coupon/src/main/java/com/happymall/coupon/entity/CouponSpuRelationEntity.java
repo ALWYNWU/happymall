@@ -8,8 +8,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 优惠券与产品关联
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-08-18 00:48:15
@@ -24,17 +22,11 @@ public class CouponSpuRelationEntity implements Serializable {
 	 */
 	@TableId
 	private Long id;
-	/**
-	 * 优惠券id
-	 */
+
 	private Long couponId;
-	/**
-	 * spu_id
-	 */
+
 	private Long spuId;
-	/**
-	 * spu_name
-	 */
+
 	private String spuName;
 
 }

@@ -7,7 +7,6 @@ import com.happymall.coupon.entity.CouponHistoryEntity;
 import java.util.Map;
 
 /**
- * 优惠券领取历史记录
  *
  * @author YILONG
  * @email yilongwu97@gmail.com

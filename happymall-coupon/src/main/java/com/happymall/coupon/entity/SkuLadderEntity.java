@@ -9,8 +9,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 商品阶梯价格
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-08-18 00:48:15
@@ -29,21 +27,13 @@ public class SkuLadderEntity implements Serializable {
 	 * spu_id
 	 */
 	private Long skuId;
-	/**
-	 * 满几件
-	 */
+
 	private Integer fullCount;
-	/**
-	 * 打几折
-	 */
+
 	private BigDecimal discount;
-	/**
-	 * 折后价
-	 */
+
 	private BigDecimal price;
-	/**
-	 * 是否叠加其他优惠[0-不可叠加，1-可叠加]
-	 */
+
 	private Integer addOther;
 
 }

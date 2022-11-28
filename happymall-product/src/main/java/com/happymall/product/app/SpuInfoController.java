@@ -15,7 +15,6 @@ import com.common.utils.R;
 
 
 /**
- * spu信息
  *
  * @author YILONG
  * @email yilongwu97@gmail.com
@@ -40,10 +39,6 @@ public class SpuInfoController {
         return R.ok().setData(entity);
     }
 
-
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = spuInfoService.queryPageByCondition(params);
@@ -52,9 +47,6 @@ public class SpuInfoController {
     }
 
 
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		SpuInfoEntity spuInfo = spuInfoService.getById(id);
@@ -62,20 +54,14 @@ public class SpuInfoController {
         return R.ok().put("spuInfo", spuInfo);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody SpuSaveVo vo){
-//		spuInfoService.save(spuInfo);
         spuInfoService.saveSpuInfo(vo);
-
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
+
     @RequestMapping("/update")
     public R update(@RequestBody SpuInfoEntity spuInfo){
 		spuInfoService.updateById(spuInfo);
@@ -83,9 +69,7 @@ public class SpuInfoController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		spuInfoService.removeByIds(Arrays.asList(ids));

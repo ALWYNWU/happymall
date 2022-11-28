@@ -30,9 +30,6 @@ public class HomeAdvController {
     @Autowired
     private HomeAdvService homeAdvService;
 
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = homeAdvService.queryPage(params);
@@ -41,9 +38,6 @@ public class HomeAdvController {
     }
 
 
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		HomeAdvEntity homeAdv = homeAdvService.getById(id);
@@ -51,9 +45,6 @@ public class HomeAdvController {
         return R.ok().put("homeAdv", homeAdv);
     }
 
-    /**
-     * 保存
-     */
     @RequestMapping("/save")
     public R save(@RequestBody HomeAdvEntity homeAdv){
 		homeAdvService.save(homeAdv);
@@ -61,9 +52,6 @@ public class HomeAdvController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
     @RequestMapping("/update")
     public R update(@RequestBody HomeAdvEntity homeAdv){
 		homeAdvService.updateById(homeAdv);
@@ -71,9 +59,6 @@ public class HomeAdvController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		homeAdvService.removeByIds(Arrays.asList(ids));

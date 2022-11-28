@@ -1,6 +1,5 @@
 package com.happymall.product.config;
 
-//import com.alibaba.fastjson.support.spring.GenericFastJsonRedisSerializer;
 import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cache.annotation.EnableCaching;

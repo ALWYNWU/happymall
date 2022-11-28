@@ -9,8 +9,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 商品满减信息
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-08-18 00:48:15
@@ -29,17 +27,11 @@ public class SkuFullReductionEntity implements Serializable {
 	 * spu_id
 	 */
 	private Long skuId;
-	/**
-	 * 满多少
-	 */
+
 	private BigDecimal fullPrice;
-	/**
-	 * 减多少
-	 */
+
 	private BigDecimal reducePrice;
-	/**
-	 * 是否参与其他优惠
-	 */
+
 	private Integer addOther;
 
 }

@@ -30,9 +30,7 @@ public class SeckillSessionController {
     @Autowired
     private SeckillSessionService seckillSessionService;
 
-    /**
-     * 列表
-     */
+
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = seckillSessionService.queryPage(params);
@@ -41,9 +39,6 @@ public class SeckillSessionController {
     }
 
 
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		SeckillSessionEntity seckillSession = seckillSessionService.getById(id);
@@ -51,9 +46,7 @@ public class SeckillSessionController {
         return R.ok().put("seckillSession", seckillSession);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody SeckillSessionEntity seckillSession){
 		seckillSessionService.save(seckillSession);
@@ -61,9 +54,7 @@ public class SeckillSessionController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
+
     @RequestMapping("/update")
     public R update(@RequestBody SeckillSessionEntity seckillSession){
 		seckillSessionService.updateById(seckillSession);
@@ -71,9 +62,7 @@ public class SeckillSessionController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		seckillSessionService.removeByIds(Arrays.asList(ids));

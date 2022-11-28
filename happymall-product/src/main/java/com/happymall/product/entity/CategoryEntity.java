@@ -17,8 +17,6 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.Data;
 
 /**
- * 商品三级分类
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11

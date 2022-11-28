@@ -7,8 +7,6 @@ import com.happymall.coupon.entity.MemberPriceEntity;
 import java.util.Map;
 
 /**
- * 商品会员价格
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-08-18 00:48:15

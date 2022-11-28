@@ -30,9 +30,6 @@ public class SeckillSkuNoticeController {
     @Autowired
     private SeckillSkuNoticeService seckillSkuNoticeService;
 
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = seckillSkuNoticeService.queryPage(params);
@@ -41,9 +38,6 @@ public class SeckillSkuNoticeController {
     }
 
 
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		SeckillSkuNoticeEntity seckillSkuNotice = seckillSkuNoticeService.getById(id);
@@ -51,9 +45,7 @@ public class SeckillSkuNoticeController {
         return R.ok().put("seckillSkuNotice", seckillSkuNotice);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody SeckillSkuNoticeEntity seckillSkuNotice){
 		seckillSkuNoticeService.save(seckillSkuNotice);
@@ -61,9 +53,7 @@ public class SeckillSkuNoticeController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
+
     @RequestMapping("/update")
     public R update(@RequestBody SeckillSkuNoticeEntity seckillSkuNotice){
 		seckillSkuNoticeService.updateById(seckillSkuNotice);
@@ -71,9 +61,7 @@ public class SeckillSkuNoticeController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		seckillSkuNoticeService.removeByIds(Arrays.asList(ids));

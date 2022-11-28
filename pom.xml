@@ -17,12 +17,8 @@
         <module>happymall-order</module>
         <module>happymall-product</module>
         <module>happymall-ware</module>
-        <module>renren-fast</module>
-        <module>renren-generator</module>
         <module>happymall-common</module>
         <module>renren-fast</module>
-        <module>renren-generator</module>
-        <module>happymall-common</module>
     </modules>
 
 

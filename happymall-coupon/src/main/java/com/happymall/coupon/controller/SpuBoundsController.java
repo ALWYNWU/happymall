@@ -26,9 +26,6 @@ public class SpuBoundsController {
     @Autowired
     private SpuBoundsService spuBoundsService;
 
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = spuBoundsService.queryPage(params);
@@ -37,9 +34,6 @@ public class SpuBoundsController {
     }
 
 
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		SpuBoundsEntity spuBounds = spuBoundsService.getById(id);
@@ -47,9 +41,7 @@ public class SpuBoundsController {
         return R.ok().put("spuBounds", spuBounds);
     }
 
-    /**
-     * 保存
-     */
+
     @PostMapping("/save")
     public R save(@RequestBody SpuBoundsEntity spuBounds){
 		spuBoundsService.save(spuBounds);
@@ -57,9 +49,7 @@ public class SpuBoundsController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
+
     @RequestMapping("/update")
     public R update(@RequestBody SpuBoundsEntity spuBounds){
 		spuBoundsService.updateById(spuBounds);
@@ -67,9 +57,7 @@ public class SpuBoundsController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		spuBoundsService.removeByIds(Arrays.asList(ids));

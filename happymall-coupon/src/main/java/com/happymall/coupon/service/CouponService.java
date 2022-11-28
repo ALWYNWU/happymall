@@ -7,8 +7,6 @@ import com.happymall.coupon.entity.CouponEntity;
 import java.util.Map;
 
 /**
- * 优惠券信息
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-08-18 00:48:15

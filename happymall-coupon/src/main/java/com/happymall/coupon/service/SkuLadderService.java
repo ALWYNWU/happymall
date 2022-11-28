@@ -7,8 +7,6 @@ import com.happymall.coupon.entity.SkuLadderEntity;
 import java.util.Map;
 
 /**
- * 商品阶梯价格
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-08-18 00:48:15

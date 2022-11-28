@@ -15,10 +15,7 @@ import com.happymall.coupon.service.HomeSubjectSpuService;
 import com.common.utils.PageUtils;
 import com.common.utils.R;
 
-
-
 /**
- * 专题商品
  *
  * @author YILONG
  * @email yilongwu97@gmail.com
@@ -30,9 +27,6 @@ public class HomeSubjectSpuController {
     @Autowired
     private HomeSubjectSpuService homeSubjectSpuService;
 
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = homeSubjectSpuService.queryPage(params);
@@ -41,9 +35,6 @@ public class HomeSubjectSpuController {
     }
 
 
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		HomeSubjectSpuEntity homeSubjectSpu = homeSubjectSpuService.getById(id);
@@ -51,9 +42,7 @@ public class HomeSubjectSpuController {
         return R.ok().put("homeSubjectSpu", homeSubjectSpu);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody HomeSubjectSpuEntity homeSubjectSpu){
 		homeSubjectSpuService.save(homeSubjectSpu);
@@ -61,9 +50,7 @@ public class HomeSubjectSpuController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
+
     @RequestMapping("/update")
     public R update(@RequestBody HomeSubjectSpuEntity homeSubjectSpu){
 		homeSubjectSpuService.updateById(homeSubjectSpu);
@@ -71,9 +58,7 @@ public class HomeSubjectSpuController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		homeSubjectSpuService.removeByIds(Arrays.asList(ids));

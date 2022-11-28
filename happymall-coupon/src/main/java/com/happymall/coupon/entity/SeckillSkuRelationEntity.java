@@ -9,8 +9,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 秒杀活动商品关联
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-08-18 00:48:15
@@ -25,33 +23,19 @@ public class SeckillSkuRelationEntity implements Serializable {
 	 */
 	@TableId
 	private Long id;
-	/**
-	 * 活动id
-	 */
+
 	private Long promotionId;
-	/**
-	 * 活动场次id
-	 */
+
 	private Long promotionSessionId;
-	/**
-	 * 商品id
-	 */
+
 	private Long skuId;
-	/**
-	 * 秒杀价格
-	 */
+
 	private BigDecimal seckillPrice;
-	/**
-	 * 秒杀总量
-	 */
+
 	private BigDecimal seckillCount;
-	/**
-	 * 每人限购数量
-	 */
+
 	private BigDecimal seckillLimit;
-	/**
-	 * 排序
-	 */
+
 	private Integer seckillSort;
 
 }

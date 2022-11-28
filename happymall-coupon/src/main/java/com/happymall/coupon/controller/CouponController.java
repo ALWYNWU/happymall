@@ -20,8 +20,6 @@ import com.common.utils.R;
 
 
 /**
- * 优惠券信息
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-08-18 00:48:15
@@ -53,9 +51,7 @@ public class CouponController {
         return R.ok().put("coupon",Arrays.asList(couponEntity));
     }
 
-    /**
-     * 列表
-     */
+
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = couponService.queryPage(params);
@@ -64,9 +60,7 @@ public class CouponController {
     }
 
 
-    /**
-     * 信息
-     */
+
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		CouponEntity coupon = couponService.getById(id);
@@ -74,9 +68,7 @@ public class CouponController {
         return R.ok().put("coupon", coupon);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody CouponEntity coupon){
 		couponService.save(coupon);
@@ -84,9 +76,7 @@ public class CouponController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
+
     @RequestMapping("/update")
     public R update(@RequestBody CouponEntity coupon){
 		couponService.updateById(coupon);
@@ -94,9 +84,7 @@ public class CouponController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		couponService.removeByIds(Arrays.asList(ids));
