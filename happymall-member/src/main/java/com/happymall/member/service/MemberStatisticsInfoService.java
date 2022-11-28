@@ -7,8 +7,6 @@ import com.happymall.member.entity.MemberStatisticsInfoEntity;
 import java.util.Map;
 
 /**
- * 会员统计信息
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-05 14:42:51

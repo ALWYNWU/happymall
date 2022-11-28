@@ -15,11 +15,7 @@ import com.happymall.member.service.GrowthChangeHistoryService;
 import com.common.utils.PageUtils;
 import com.common.utils.R;
 
-
-
 /**
- * 成长值变化历史记录
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-05 14:42:51

@@ -15,8 +15,6 @@ import com.common.utils.R;
 
 
 /**
- * 会员收货地址
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-05 14:42:51

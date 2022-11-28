@@ -8,8 +8,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 会员
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-05 14:42:51

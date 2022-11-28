@@ -7,8 +7,6 @@ import com.happymall.member.entity.GrowthChangeHistoryEntity;
 import java.util.Map;
 
 /**
- * 成长值变化历史记录
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-05 14:42:51

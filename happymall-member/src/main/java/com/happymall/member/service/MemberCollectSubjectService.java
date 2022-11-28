@@ -7,8 +7,6 @@ import com.happymall.member.entity.MemberCollectSubjectEntity;
 import java.util.Map;
 
 /**
- * 会员收藏的专题活动
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-05 14:42:51
