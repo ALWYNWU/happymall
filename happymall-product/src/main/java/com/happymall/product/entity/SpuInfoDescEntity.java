@@ -9,8 +9,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * spu信息介绍
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11
@@ -26,9 +24,7 @@ public class SpuInfoDescEntity implements Serializable {
 	 */
 	@TableId(type = IdType.INPUT)
 	private Long spuId;
-	/**
-	 * 商品介绍
-	 */
+
 	private String decript;
 
 }

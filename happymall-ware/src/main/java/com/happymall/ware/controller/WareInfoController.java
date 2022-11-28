@@ -16,8 +16,6 @@ import com.common.utils.R;
 
 
 /**
- * 仓库信息
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-05 15:02:21
@@ -34,9 +32,6 @@ public class WareInfoController {
         return R.ok().setData(fare);
     }
 
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = wareInfoService.queryPage(params);
@@ -45,9 +40,6 @@ public class WareInfoController {
     }
 
 
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		WareInfoEntity wareInfo = wareInfoService.getById(id);
@@ -55,9 +47,7 @@ public class WareInfoController {
         return R.ok().put("wareInfo", wareInfo);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody WareInfoEntity wareInfo){
 		wareInfoService.save(wareInfo);
@@ -65,9 +55,7 @@ public class WareInfoController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
+
     @RequestMapping("/update")
     public R update(@RequestBody WareInfoEntity wareInfo){
 		wareInfoService.updateById(wareInfo);
@@ -75,9 +63,7 @@ public class WareInfoController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		wareInfoService.removeByIds(Arrays.asList(ids));

@@ -8,8 +8,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * sku图片
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11
@@ -28,17 +26,11 @@ public class SkuImagesEntity implements Serializable {
 	 * sku_id
 	 */
 	private Long skuId;
-	/**
-	 * 图片地址
-	 */
+
 	private String imgUrl;
-	/**
-	 * 排序
-	 */
+
 	private Integer imgSort;
-	/**
-	 * 默认图[0 - 不是默认图，1 - 是默认图]
-	 */
+
 	private Integer defaultImg;
 
 }

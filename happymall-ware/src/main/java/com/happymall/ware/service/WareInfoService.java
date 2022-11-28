@@ -9,8 +9,6 @@ import java.math.BigDecimal;
 import java.util.Map;
 
 /**
- * 仓库信息
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-05 15:02:21

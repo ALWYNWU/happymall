@@ -8,8 +8,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * spu图片
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11
@@ -28,21 +26,13 @@ public class SpuImagesEntity implements Serializable {
 	 * spu_id
 	 */
 	private Long spuId;
-	/**
-	 * 图片名
-	 */
+
 	private String imgName;
-	/**
-	 * 图片地址
-	 */
+
 	private String imgUrl;
-	/**
-	 * 顺序
-	 */
+
 	private Integer imgSort;
-	/**
-	 * 是否默认图
-	 */
+
 	private Integer defaultImg;
 
 }

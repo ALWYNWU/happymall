@@ -10,8 +10,6 @@ import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 /**
- * sku信息
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11

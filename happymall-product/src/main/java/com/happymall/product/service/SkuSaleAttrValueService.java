@@ -9,8 +9,6 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * sku销售属性&值
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11

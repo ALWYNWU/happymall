@@ -7,8 +7,6 @@ import com.happymall.product.entity.SpuCommentEntity;
 import java.util.Map;
 
 /**
- * 商品评价
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11

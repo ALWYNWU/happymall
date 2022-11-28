@@ -18,7 +18,6 @@ import com.common.utils.R;
 
 
 /**
- * 
  *
  * @author YILONG
  * @email yilongwu97@gmail.com
@@ -29,10 +28,6 @@ import com.common.utils.R;
 public class PurchaseDetailController {
     @Autowired
     private PurchaseDetailService purchaseDetailService;
-
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = purchaseDetailService.queryPage(params);
@@ -41,9 +36,6 @@ public class PurchaseDetailController {
     }
 
 
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		PurchaseDetailEntity purchaseDetail = purchaseDetailService.getById(id);
@@ -51,9 +43,7 @@ public class PurchaseDetailController {
         return R.ok().put("purchaseDetail", purchaseDetail);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody PurchaseDetailEntity purchaseDetail){
 		purchaseDetailService.save(purchaseDetail);
@@ -61,9 +51,7 @@ public class PurchaseDetailController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
+
     @RequestMapping("/update")
     public R update(@RequestBody PurchaseDetailEntity purchaseDetail){
 		purchaseDetailService.updateById(purchaseDetail);
@@ -71,9 +59,7 @@ public class PurchaseDetailController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		purchaseDetailService.removeByIds(Arrays.asList(ids));

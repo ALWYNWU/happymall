@@ -9,8 +9,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * spu信息
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11
@@ -25,37 +23,21 @@ public class SpuInfoEntity implements Serializable {
 	 */
 	@TableId
 	private Long id;
-	/**
-	 * 商品名称
-	 */
+
 	private String spuName;
-	/**
-	 * 商品描述
-	 */
+
 	private String spuDescription;
-	/**
-	 * 所属分类id
-	 */
+
 	private Long catalogId;
-	/**
-	 * 品牌id
-	 */
+
 	private Long brandId;
-	/**
-	 * 
-	 */
+
 	private BigDecimal weight;
-	/**
-	 * 上架状态[0 - 下架，1 - 上架]
-	 */
+
 	private Integer publishStatus;
-	/**
-	 * 
-	 */
+
 	private Date createTime;
-	/**
-	 * 
-	 */
+
 	private Date updateTime;
 
 }

@@ -8,8 +8,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 品牌分类关联
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11
@@ -24,21 +22,13 @@ public class CategoryBrandRelationEntity implements Serializable {
 	 */
 	@TableId
 	private Long id;
-	/**
-	 * 品牌id
-	 */
+
 	private Long brandId;
-	/**
-	 * 分类id
-	 */
+
 	private Long catelogId;
-	/**
-	 * 
-	 */
+
 	private String brandName;
-	/**
-	 * 
-	 */
+
 	private String catelogName;
 
 }

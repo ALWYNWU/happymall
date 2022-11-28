@@ -18,8 +18,6 @@ import com.common.utils.R;
 
 
 /**
- * 采购信息
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-05 15:02:21
@@ -36,8 +34,6 @@ public class PurchaseController {
 
         return R.ok();
     }
-
-
 
     @PostMapping("/received")
     public R received(@RequestBody List<Long> ids){
@@ -63,9 +59,6 @@ public class PurchaseController {
         return R.ok().put("page", page);
     }
 
-    /**
-     * 列表
-     */
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = purchaseService.queryPage(params);
@@ -73,10 +66,6 @@ public class PurchaseController {
         return R.ok().put("page", page);
     }
 
-
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		PurchaseEntity purchase = purchaseService.getById(id);
@@ -84,9 +73,7 @@ public class PurchaseController {
         return R.ok().put("purchase", purchase);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody PurchaseEntity purchase){
         purchase.setCreateTime(new Date());
@@ -96,9 +83,6 @@ public class PurchaseController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
     @RequestMapping("/update")
     public R update(@RequestBody PurchaseEntity purchase){
 		purchaseService.updateById(purchase);
@@ -106,9 +90,7 @@ public class PurchaseController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		purchaseService.removeByIds(Arrays.asList(ids));

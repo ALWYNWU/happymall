@@ -41,35 +41,23 @@ public class BrandEntity implements Serializable {
 	@NotBlank(message = "Brand name can not be empty!", groups = {AddGroup.class, UpdateGroup.class})
 	private String name;
 
-	/**
-	 * 品牌logo地址
-	 */
 	@NotBlank(message = "Logo url can not be empty!", groups = {AddGroup.class})
 	@URL(message = "Logo must be a valid url address", groups = {AddGroup.class, UpdateGroup.class})
 	private String logo;
 
-	/**
-	 * 介绍
-	 */
+
 	private String descript;
 
-	/**
-	 * 显示状态[0-不显示；1-显示]
-	 */
 	@NotNull(groups = {AddGroup.class, UpdateGroup.class})
 	@ListValue(vals = {0, 1}, groups = {AddGroup.class, UpdateStatusGroup.class})
 	private Integer showStatus;
 
-	/**
-	 * 检索首字母
-	 */
+
 	@NotEmpty(message = "First letter can not be empty!", groups = {AddGroup.class})
 	@Pattern(regexp = "^[a-zA-Z]$", message = "First letter must be one letter", groups = {AddGroup.class, UpdateGroup.class})
 	private String firstLetter;
 
-	/**
-	 * 排序
-	 */
+
 	@NotNull(message = "Rank can not be empty!", groups = {AddGroup.class})
 	@Min(value = 0, message = "Rank must greater than 0", groups = {AddGroup.class, UpdateGroup.class})
 	private Integer sort;

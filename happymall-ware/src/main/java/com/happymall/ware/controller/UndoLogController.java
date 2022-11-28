@@ -18,7 +18,6 @@ import com.common.utils.R;
 
 
 /**
- * 
  *
  * @author YILONG
  * @email yilongwu97@gmail.com
@@ -30,9 +29,7 @@ public class UndoLogController {
     @Autowired
     private UndoLogService undoLogService;
 
-    /**
-     * 列表
-     */
+
     @RequestMapping("/list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = undoLogService.queryPage(params);
@@ -41,9 +38,6 @@ public class UndoLogController {
     }
 
 
-    /**
-     * 信息
-     */
     @RequestMapping("/info/{id}")
     public R info(@PathVariable("id") Long id){
 		UndoLogEntity undoLog = undoLogService.getById(id);
@@ -51,9 +45,7 @@ public class UndoLogController {
         return R.ok().put("undoLog", undoLog);
     }
 
-    /**
-     * 保存
-     */
+
     @RequestMapping("/save")
     public R save(@RequestBody UndoLogEntity undoLog){
 		undoLogService.save(undoLog);
@@ -61,9 +53,7 @@ public class UndoLogController {
         return R.ok();
     }
 
-    /**
-     * 修改
-     */
+
     @RequestMapping("/update")
     public R update(@RequestBody UndoLogEntity undoLog){
 		undoLogService.updateById(undoLog);
@@ -71,9 +61,7 @@ public class UndoLogController {
         return R.ok();
     }
 
-    /**
-     * 删除
-     */
+
     @RequestMapping("/delete")
     public R delete(@RequestBody Long[] ids){
 		undoLogService.removeByIds(Arrays.asList(ids));

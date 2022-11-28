@@ -8,8 +8,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 属性&属性分组关联
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11
@@ -24,17 +22,11 @@ public class AttrAttrgroupRelationEntity implements Serializable {
 	 */
 	@TableId
 	private Long id;
-	/**
-	 * 属性id
-	 */
+
 	private Long attrId;
-	/**
-	 * 属性分组id
-	 */
+
 	private Long attrGroupId;
-	/**
-	 * 属性组内排序
-	 */
+
 	private Integer attrSort;
 
 

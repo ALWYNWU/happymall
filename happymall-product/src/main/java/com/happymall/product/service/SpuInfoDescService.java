@@ -7,8 +7,6 @@ import com.happymall.product.entity.SpuInfoDescEntity;
 import java.util.Map;
 
 /**
- * spu信息介绍
- *
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11

@@ -8,8 +8,6 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * sku销售属性&值
- * 
  * @author YILONG
  * @email yilongwu97@gmail.com
  * @date 2022-09-07 18:10:11
@@ -32,17 +30,11 @@ public class SkuSaleAttrValueEntity implements Serializable {
 	 * attr_id
 	 */
 	private Long attrId;
-	/**
-	 * 销售属性名
-	 */
+
 	private String attrName;
-	/**
-	 * 销售属性值
-	 */
+
 	private String attrValue;
-	/**
-	 * 顺序
-	 */
+
 	private Integer attrSort;
 
 }
