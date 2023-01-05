@@ -29,8 +29,13 @@ import com.common.utils.R;
 @RequestMapping("member/member")
 public class MemberController {
 
-    @Autowired
+
     private MemberService memberService;
+
+    @Autowired
+    public void setMemberService(MemberService memberService){
+        this.memberService = memberService;
+    }
 
     @Autowired
     CouponFeignService couponFeignService;
