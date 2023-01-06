@@ -7,13 +7,14 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="happymall-auth-server" />
-        <module name="happymall-product" />
         <module name="happymall-common" />
-        <module name="happymall-member" />
-        <module name="happymall-ware" />
         <module name="happymall-third-party" />
         <module name="happymall-order" />
+        <module name="happymall-auth-server" />
+        <module name="happymall-product" />
+        <module name="happymall-flashsale" />
+        <module name="happymall-member" />
+        <module name="happymall-ware" />
         <module name="renren-fast" />
         <module name="happymall-gateway" />
         <module name="happymall-coupon" />
@@ -28,6 +29,7 @@
       <module name="happymall-auth-server" options="-parameters" />
       <module name="happymall-cart" options="-parameters" />
       <module name="happymall-coupon" options="-parameters" />
+      <module name="happymall-flashsale" options="-parameters" />
       <module name="happymall-gateway" options="-parameters" />
       <module name="happymall-member" options="-parameters" />
       <module name="happymall-order" options="-parameters" />
