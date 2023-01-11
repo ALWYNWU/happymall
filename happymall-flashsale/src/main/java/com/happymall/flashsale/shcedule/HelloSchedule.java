@@ -19,9 +19,9 @@ public class HelloSchedule {
      * 1. 最后一位不能是年
      * 2. 1-7 代表周一到周日
      */
-    @Scheduled(cron = "* * * * * ?")
-    public void hello(){
-        log.info("hello...");
-    }
+//    @Scheduled(cron = "* * * * * ?")
+//    public void hello(){
+//        log.info("hello...");
+//    }
 
 }
