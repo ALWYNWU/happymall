@@ -274,6 +274,7 @@ public class WareSkuServiceImpl extends ServiceImpl<WareSkuDao, WareSkuEntity> i
     @Override
     @Transactional
     public void unlockStock(OrderTo orderTo) {
+
         String orderSn = orderTo.getOrderSn();
 
         // Check stock lock status, prevent release stock repeatedly
