@@ -9,6 +9,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 
@@ -20,19 +24,8 @@ public class HappymallCouponApplicationTests {
 
     @Test
     public void contextLoads() throws SQLException {
-
-
-        List<CouponEntity> list = couponService.list(new QueryWrapper<CouponEntity>().eq("coupon_name",1));
-
-
-        list.forEach((item) -> {
-            System.out.println(item);
-        });
-//        Connection conn = DriverManager.getConnection("jdbc:mysql://192.168.56.10:3306/happymall_sms",
-//                "root","root");
-//        System.out.println(conn);
-
-
+        System.out.println(LocalDateTime.of(LocalDate.now().plusDays(2), LocalTime.MAX)
+                .format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
     }
 
 }

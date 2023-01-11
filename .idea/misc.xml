@@ -19,6 +19,7 @@
         <option value="$PROJECT_DIR$/happymall-search/pom.xml" />
         <option value="$PROJECT_DIR$/happymall-auth-server/pom.xml" />
         <option value="$PROJECT_DIR$/happymall-cart/pom.xml" />
+        <option value="$PROJECT_DIR$/happymall-flashsale/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
