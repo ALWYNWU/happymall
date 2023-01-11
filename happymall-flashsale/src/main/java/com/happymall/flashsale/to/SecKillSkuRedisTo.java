@@ -1,16 +1,18 @@
-package com.happymall.flashsale.vo;
+package com.happymall.flashsale.to;
 
+import com.happymall.flashsale.vo.SkuInfoVo;
 import lombok.Data;
 
 import java.math.BigDecimal;
 
 /**
  * @author Yilong
- * @date 2023-01-06 12:29 a.m.
+ * @date 2023-01-10 11:04 p.m.
  * @description
  */
+
 @Data
-public class SeckillSkuVo {
+public class SecKillSkuRedisTo {
 
     private Long id;
 
@@ -20,6 +22,8 @@ public class SeckillSkuVo {
 
     private Long skuId;
 
+    private String randomCode;
+
     private BigDecimal seckillPrice;
 
     private Integer seckillCount;
@@ -27,5 +31,10 @@ public class SeckillSkuVo {
     private Integer seckillLimit;
 
     private Integer seckillSort;
+
+    private SkuInfoVo skuInfo;
+
+    private Long startTime;
+    private Long endTime;
 
 }
