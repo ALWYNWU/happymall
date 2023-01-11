@@ -1,10 +1,10 @@
 package com.happymall.flashsale;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class HappymallFlashsaleApplicationTests {
+public class HappymallFlashsaleApplicationTests {
 
     @Test
     void contextLoads() {

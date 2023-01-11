@@ -56,8 +56,9 @@ public class FlashSaleServiceImpl implements FlashSaleService {
             String key = SESSIONS_CACHE_PREFIX + startTime + "_" + endTime;
             List<String> entityIdList =
                     session.getRelationEntities().stream().map(item -> item.getId().toString()).collect(Collectors.toList());
-            redisTemplate.opsForList().leftPushAll(key, entityIdList);
 
+            // 缓存秒杀活动信息
+            redisTemplate.opsForList().leftPushAll(key, entityIdList);
         });
 
 
